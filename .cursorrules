@@ -1,0 +1,14 @@
+# Reglas de Comportamiento (Guardrails) - Entorno MAES
+
+Al actuar como AI Assistant o escribir/refactorizar código dentro de este proyecto, se aplican estrictamente las siguientes reglas obligatorias:
+
+1. **Performance (Rendimiento)**: 
+   - El código generado debe cumplir con las métricas vitales de la web (Core Web Vitals).
+   - Optimiza siempre el `Largest Contentful Paint` (LCP), prevén `Cumulative Layout Shift` (CLS) y optimiza el `First Input Delay` / `Interaction to Next Paint` (INP).
+
+2. **Semántica Artificial (AEO)**: 
+   - Inyecta automáticamente **Tripletas Semánticas** en los atributos o microformatos de cada UI element y componente de contenido.
+   - Todo componente debe considerarse una entidad para ser extraída e interpretada eficientemente por modelos IA.
+
+3. **Seguridad (SecOps)**: 
+   - Aplica rigurosamente todas las mejores prácticas de **Better Auth** (gestión de sesiones seguras, CSRF, rate-limiting) y **Sentry** (rastreo de errores y control) en cada página e integración expuesta al front o al backend.
