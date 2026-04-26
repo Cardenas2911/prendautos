@@ -32,7 +32,7 @@ const { title, emphasis, titleSuffix, lede, showCtas = true } = Astro.props;
     {
       showCtas && (
         <div class="flex gap-3 flex-wrap">
-          <Button href="/simulador" variant="primary" size="lg">
+          <Button href={`${import.meta.env.BASE_URL}/simulador`} variant="primary" size="lg">
             Calcular mi préstamo →
           </Button>
           <Button

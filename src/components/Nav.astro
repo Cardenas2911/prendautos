@@ -17,17 +17,17 @@ interface Props {
 const { active = null } = Astro.props;
 
 const links = [
-  { href: `/`, label: "Inicio", key: "inicio" },
-  { href: `/prestamos-vehiculos`, label: "Préstamos", key: "prestamos" },
+  { href: `${import.meta.env.BASE_URL}/`, label: "Inicio", key: "inicio" },
+  { href: `${import.meta.env.BASE_URL}/prestamos-vehiculos`, label: "Préstamos", key: "prestamos" },
   {
-    href: `/sin-dejar-el-carro`,
+    href: `${import.meta.env.BASE_URL}/sin-dejar-el-carro`,
     label: "Sin dejar el carro",
     key: "sin-dejar-el-carro",
   },
-  { href: `/pignoracion`, label: "Pignoración", key: "pignoracion" },
-  { href: `/simulador`, label: "Simulador", key: "simulador" },
-  { href: `/nosotros`, label: "Nosotros", key: "nosotros" },
-  { href: `/oficinas`, label: "Oficinas", key: "oficinas" },
+  { href: `${import.meta.env.BASE_URL}/pignoracion`, label: "Pignoración", key: "pignoracion" },
+  { href: `${import.meta.env.BASE_URL}/simulador`, label: "Simulador", key: "simulador" },
+  { href: `${import.meta.env.BASE_URL}/nosotros`, label: "Nosotros", key: "nosotros" },
+  { href: `${import.meta.env.BASE_URL}/oficinas`, label: "Oficinas", key: "oficinas" },
 ];
 ---
 
@@ -62,12 +62,12 @@ const links = [
 
     <div class="flex items-center gap-2 sm:gap-2.5">
       <div class="hidden lg:flex items-center gap-2.5">
-        <Button href="/preguntas-frecuentes" variant="ghost">Ayuda</Button>
-        <Button href="/simulador" variant="primary">Solicitar préstamo</Button>
+        <Button href={`${import.meta.env.BASE_URL}/preguntas-frecuentes`} variant="ghost">Ayuda</Button>
+        <Button href={`${import.meta.env.BASE_URL}/simulador`} variant="primary">Solicitar préstamo</Button>
       </div>
 
       <a
-        href="/simulador"
+        href={`${import.meta.env.BASE_URL}/simulador`}
         class="lg:hidden inline-flex items-center gap-1.5 bg-primary text-white font-semibold text-[13px] sm:text-sm px-3 sm:px-4 py-2.5 rounded-[10px] hover:bg-primary-dark transition-colors whitespace-nowrap"
       >
         Solicitar
