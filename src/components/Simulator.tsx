@@ -58,7 +58,7 @@ export default function Simulator() {
   return (
     <div className="grid lg:grid-cols-2 gap-8 items-start">
       {/* FORM */}
-      <div className="bg-white border border-border rounded-3xl p-9">
+      <div className="bg-white border border-border rounded-3xl p-6 md:p-9">
         <Field label="Tipo de vehículo">
           <div className="grid grid-cols-3 gap-2">
             {VEHICLE_TYPES.map((t) => {
@@ -121,7 +121,7 @@ export default function Simulator() {
       </div>
 
       {/* RESULT */}
-      <div className="bg-dark text-white rounded-3xl p-9 lg:sticky lg:top-[100px]">
+      <div className="bg-dark text-white rounded-3xl p-6 md:p-9 lg:sticky lg:top-[100px]">
         <span className="inline-block bg-accent/15 text-accent font-mono text-[11px] px-2.5 py-1 rounded-full tracking-wider uppercase font-semibold mb-5">
           Pre-aprobación estimada
         </span>
@@ -129,7 +129,7 @@ export default function Simulator() {
         <div className="text-[13px] text-white/55 font-mono tracking-wider uppercase">
           Recibes hasta
         </div>
-        <div className="text-5xl font-extrabold tracking-[-0.04em] mt-1 mb-6 text-accent">
+        <div className="text-4xl md:text-5xl font-extrabold tracking-[-0.04em] mt-1 mb-6 text-accent">
           {formatCOP(monto)}
         </div>
 
