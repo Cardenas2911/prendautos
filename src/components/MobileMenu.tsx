@@ -85,8 +85,8 @@ export default function MobileMenu({ active = null }: Props) {
             onClick={() => setOpen(false)}
           />
 
-          {/* Glassmorphism Panel - Gradient Verde Oscuro */}
-          <div className="absolute right-0 sm:right-4 top-0 sm:top-4 bottom-0 sm:bottom-4 w-full sm:max-w-[340px] bg-gradient-to-b from-[#081714]/95 to-[#0B4032]/95 backdrop-blur-xl sm:rounded-[32px] sm:border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden animate-[slideIn_0.4s_cubic-bezier(0.16,1,0.3,1)]">
+          {/* Glassmorphism Panel - Sidebar Lateral Izquierdo */}
+          <div className="absolute left-0 top-0 bottom-0 w-[85%] max-w-[340px] bg-gradient-to-b from-[#081714]/95 to-[#0B4032]/95 backdrop-blur-xl rounded-r-[32px] sm:rounded-[32px] border-r sm:border border-white/20 shadow-[8px_0_32px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden animate-[slideInLeft_0.4s_cubic-bezier(0.16,1,0.3,1)]">
             
             {/* Header: Logo */}
             <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-white/10 relative">
@@ -207,9 +207,9 @@ export default function MobileMenu({ active = null }: Props) {
           from { opacity: 0; backdrop-filter: blur(0px); }
           to { opacity: 1; backdrop-filter: blur(8px); }
         }
-        @keyframes slideIn {
-          from { transform: translateX(100%) scale(0.95); opacity: 0; }
-          to { transform: translateX(0) scale(1); opacity: 1; }
+        @keyframes slideInLeft {
+          from { transform: translateX(-100%); opacity: 0.8; }
+          to { transform: translateX(0); opacity: 1; }
         }
       `}</style>
     </>
