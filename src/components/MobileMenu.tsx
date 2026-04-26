@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { 
   Home, 
   BadgeDollarSign, 
@@ -37,6 +38,11 @@ interface Props {
 
 export default function MobileMenu({ active = null }: Props) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -66,13 +72,13 @@ export default function MobileMenu({ active = null }: Props) {
         <Menu className="w-6 h-6" strokeWidth={2.5} />
       </button>
 
-      {open && (
+      {open && mounted && createPortal(
         <div
           id="mobile-menu"
           role="dialog"
           aria-modal="true"
           aria-label="Menú de navegación"
-          className="fixed inset-0 z-[80] lg:hidden"
+          className="fixed inset-0 z-[100] lg:hidden"
         >
           {/* Backdrop Blur Overlay */}
           <div
@@ -81,10 +87,10 @@ export default function MobileMenu({ active = null }: Props) {
           />
 
           {/* Glassmorphism Panel */}
-          <div className="absolute right-0 sm:right-4 top-0 sm:top-4 bottom-0 sm:bottom-4 w-full sm:max-w-[320px] bg-white/10 backdrop-blur-3xl sm:rounded-[32px] sm:border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col overflow-hidden animate-[slideIn_0.4s_cubic-bezier(0.16,1,0.3,1)]">
+          <div className="absolute right-0 sm:right-4 top-0 sm:top-4 bottom-0 sm:bottom-4 w-full sm:max-w-[320px] bg-[#0a1110]/95 backdrop-blur-3xl sm:rounded-[32px] sm:border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden animate-[slideIn_0.4s_cubic-bezier(0.16,1,0.3,1)]">
             
             {/* Header */}
-            <div className="flex items-center justify-between px-6 mx-2 pt-6 pb-4 border-b border-white/10 relative">
+            <div className="flex items-center justify-between px-6 mx-2 pt-6 pb-4 border-b border-light/10 relative">
               <span className="font-mono text-xs tracking-[0.2em] font-semibold text-white/50 uppercase">
                 Menú Principal
               </span>
@@ -165,7 +171,8 @@ export default function MobileMenu({ active = null }: Props) {
               </a>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       <style>{`
