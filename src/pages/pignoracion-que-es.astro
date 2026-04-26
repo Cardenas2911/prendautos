@@ -54,30 +54,30 @@ import FinalCta from "../components/FinalCta.astro";
     </Callout>
 
     <h2>¿Cómo se diferencia de otros créditos?</h2>
-    <div class="w-full overflow-x-auto">
-      <table>
-        <thead>
+    <div class="not-prose w-full overflow-x-auto pb-6 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+      <table class="w-full min-w-[540px] border-collapse bg-white border border-border sm:rounded-2xl overflow-hidden shadow-sm text-[15px]">
+        <thead class="bg-light border-b border-border text-left text-dark">
           <tr>
-            <th>Tipo</th>
-            <th>Garantía</th>
-            <th>Requiere historial crediticio</th>
+            <th class="py-4 px-5 font-bold w-1/3">Tipo</th>
+            <th class="py-4 px-5 font-semibold text-gray w-1/3">Garantía requerida</th>
+            <th class="py-4 px-5 font-semibold text-gray w-1/3">Historial crediticio</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Crédito de libre inversión</td>
-            <td>Solo tu firma</td>
-            <td>Sí, riguroso</td>
+          <tr class="border-b border-border/60 hover:bg-light/40 transition-colors">
+            <td class="py-4 px-5 font-medium">Libre inversión</td>
+            <td class="py-4 px-5 text-gray">Solo tu firma (pagaré)</td>
+            <td class="py-4 px-5 text-gray">Sí, estricto</td>
           </tr>
-          <tr>
-            <td>Crédito vehicular bancario</td>
-            <td>El carro nuevo que compras</td>
-            <td>Sí</td>
+          <tr class="border-b border-border/60 hover:bg-light/40 transition-colors">
+            <td class="py-4 px-5 font-medium">Crédito vehicular bancario</td>
+            <td class="py-4 px-5 text-gray">El carro nuevo a comprar</td>
+            <td class="py-4 px-5 text-gray">Sí</td>
           </tr>
-          <tr>
-            <td><strong>Pignoración (Prendautos)</strong></td>
-            <td><strong>Tu vehículo actual</strong></td>
-            <td><strong>No</strong></td>
+          <tr class="hover:bg-light/40 transition-colors border-b sm:border-transparent border-border/60">
+            <td class="py-4 px-5 font-extrabold text-primary">Pignoración (Prendautos)</td>
+            <td class="py-4 px-5 font-bold text-primary bg-primary/5">Tu vehículo actual</td>
+            <td class="py-4 px-5 font-bold text-primary bg-primary/5">No lo consultamos</td>
           </tr>
         </tbody>
       </table>
