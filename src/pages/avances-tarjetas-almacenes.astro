@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import FinalCta from "../components/FinalCta.astro";
+
+---
+
+<Layout
+  title="Cambiar Cupo Tarjeta Éxito, Alkosto, Falabella | Prendautos"
+  description="Convierte en efectivo el cupo de tus tarjetas retail como Éxito, Falabella, Alkosto, Cencosud o Ripley en solo 15 minutos."
+  activeNav="avances-tarjetas"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Avances Tarjetas de Crédito", href: "/avances-tarjetas-de-credito" },
+      { label: "Tarjetas de Almacenes" },
+    ]}
+  />
+
+  <PageHero
+    title="Avance de Tarjetas de "
+    emphasis="Almacenes de Cadena "
+    titleSuffix="por Efectivo"
+    lede="Muchas personas no saben que pueden obtener dinero inmediato a partir del cupo de compras de sus tarjetas de retail (Éxito, Alkosto, Falabella). Nosotros lo hacemos posible."
+    ctaText="Cambiar mi cupo por efectivo"
+    ctaHref="#"
+    isAdvanceModal={true}
+  />
+
+  <ContentProse>
+    <h2>La ventaja de tus tarjetas Retail</h2>
+    <p>
+      Si tienes una tarjeta emitida por almacenes de cadena y dispones de cupo para realizar compras, ese saldo puede sacarte de apuros transformándose en dinero real y de libre uso. Aceptamos las tarjetas más populares de Colombia:
+    </p>
+
+    <ul>
+      <li><strong>Avances Tarjeta Éxito (Tuya)</strong></li>
+      <li><strong>Cambio de cupo Tarjeta Olímpica / Serfinanza</strong></li>
+      <li><strong>Avance de efectivo Tarjeta Alkosto</strong></li>
+      <li><strong>Avances Tarjeta CMR Falabella</strong></li>
+      <li><strong>Cambiar cupo Tarjeta Cencosud / Jumbo</strong></li>
+      <li><strong>Cambio de cupo Tarjeta Ripley</strong></li>
+    </ul>
+
+    <h2>¿Cuánto cuesta hacer un avance de estas tarjetas?</h2>
+    <p>
+      El costo de procesamiento para cualquiera de estas tarjetas es de <strong>12%</strong> sobre el valor a retirar, y puedes diferir este movimiento bajo las tasas y cuotas habituales que ofrece el almacén o banco emisor de la tarjeta.
+    </p>
+
+    <p><a href="/avances-tarjetas-de-credito">Volver al menú principal de avances de tarjetas</a></p>
+
+  </ContentProse>
+
+  <FinalCta title="Aprovecha tu cupo retail ahora" subtitle="Visítanos y convierte el cupo de tus tiendas favoritas en efectivo libre de trámites en 15 minutos." ctaText="Cambiar mi cupo por efectivo" ctaHref="#" isAdvanceModal={true} />
+
+</Layout>

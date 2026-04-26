@@ -4,6 +4,7 @@ import Topbar from "../components/Topbar.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppFloat from "../components/WhatsAppFloat.astro";
+import AdvanceAmountModal from "../components/AdvanceAmountModal";
 
 interface Props {
   title: string;
@@ -68,5 +69,6 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
     </main>
     <Footer />
     <WhatsAppFloat />
+    <AdvanceAmountModal client:load />
   </body>
 </html>

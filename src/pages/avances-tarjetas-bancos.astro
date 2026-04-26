@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import FinalCta from "../components/FinalCta.astro";
+
+---
+
+<Layout
+  title="Cambiar Cupo Tarjetas Bancarias tradicionales | Prendautos"
+  description="Convierte en efectivo el cupo de compras de tu tarjeta de crédito Bancolombia, Davivienda, Colpatria o BBVA de forma inmediata."
+  activeNav="avances-tarjetas"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Avances Tarjetas de Crédito", href: "/avances-tarjetas-de-credito" },
+      { label: "Tarjetas Bancarias" },
+    ]}
+  />
+
+  <PageHero
+    title="Avance de Tarjetas de Crédito "
+    emphasis="Bancarias Tradicionales"
+    titleSuffix=""
+    lede="Evita los retiros en cajero que consumen todos tus cupos limitados de retiro; usa el cupo completo de compra de tu tarjeta de crédito para recibir efectivo físico de inmediato."
+    ctaText="Cambiar mi cupo por efectivo"
+    ctaHref="#"
+    isAdvanceModal={true}
+  />
+
+  <ContentProse>
+    <h2>Aprovecha tu cupo de compras en lugar del de retiro</h2>
+    <p>
+      Normalmente los bancos restringen drásticamente el monto que puedes sacar como efectivo directo en un cajero, y te aplican intereses muy hostiles. Al cambiar tu cupo con nosotros, hacemos uso de tu cupo principal (el de compras). Trabajamos con todos los bancos colombianos, enfocándonos altamente en:
+    </p>
+
+    <ul>
+      <li><strong>Avances tarjeta de crédito Bancolombia</strong></li>
+      <li><strong>Avances tarjeta de crédito Davivienda</strong></li>
+      <li><strong>Avances tarjeta de crédito BBVA</strong></li>
+      <li><strong>Avances tarjeta Banco Colpatria / Scotiabank</strong></li>
+      <li><strong>Banco de Bogotá, Occidente, Itaú, entre otros.</strong></li>
+    </ul>
+
+    <h2>Beneficios de realizar el avance bancario presencialmente</h2>
+    <p>
+      El costo sigue siendo el <strong>12%</strong> del monto total procesado. Es más ágil, sin largos trámites de cajero o validaciones demoradas de las aplicaciones. Llegas y en 15 minutos tu compra simula la venta y te entregamos tu préstamo líquido.
+    </p>
+
+    <p><a href="/avances-tarjetas-de-credito">Regresar al menú principal de avances de tarjetas</a></p>
+
+  </ContentProse>
+
+  <FinalCta title="Tu dinero, en minutos" subtitle="Dile adiós a las limitaciones en cajeros automáticos y dispón de tu cupo 100% hoy." ctaText="Cambiar mi cupo por efectivo" ctaHref="#" isAdvanceModal={true} />
+
+</Layout>

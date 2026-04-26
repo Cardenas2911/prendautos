@@ -7,9 +7,21 @@ interface Props {
   titleSuffix?: string;
   lede?: string;
   showCtas?: boolean;
+  ctaText?: string;
+  ctaHref?: string;
+  isAdvanceModal?: boolean;
 }
 
-const { title, emphasis, titleSuffix, lede, showCtas = true } = Astro.props;
+const { 
+  title, 
+  emphasis, 
+  titleSuffix, 
+  lede, 
+  showCtas = true,
+  ctaText = "Calcular mi préstamo →",
+  ctaHref = `${import.meta.env.BASE_URL}/simulador`,
+  isAdvanceModal = false,
+} = Astro.props;
 ---
 
 <section class="px-8 pt-20 pb-[60px] bg-base border-b border-border">
@@ -32,8 +44,8 @@ const { title, emphasis, titleSuffix, lede, showCtas = true } = Astro.props;
     {
       showCtas && (
         <div class="flex gap-3 flex-wrap">
-          <Button href={`${import.meta.env.BASE_URL}/simulador`} variant="primary" size="lg">
-            Calcular mi préstamo →
+          <Button href={ctaHref} variant="primary" size="lg" data-advance-modal={isAdvanceModal ? "" : undefined}>
+            {ctaText}
           </Button>
           <Button
             href="https://wa.me/573113547995"

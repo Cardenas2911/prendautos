@@ -1,0 +1,113 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import Callout from "../components/Callout.astro";
+import FinalCta from "../components/FinalCta.astro";
+import FAQAccordion from "../components/FAQAccordion.tsx";
+
+const faqs = [
+  {
+    question: "¿Cuál es el proceso para cambiar mi cupo por efectivo?",
+    answer: "Es muy sencillo. Solo debes acercarte a nuestras instalaciones con tu cédula original y la tarjeta de crédito. Pasamos tu tarjeta por nuestro datáfono, se registra como una compra normal, firmas el comprobante y en 15 minutos te entregamos tu efectivo.",
+  },
+  {
+    question: "¿Con cuáles tarjetas de crédito puedo hacerlo?",
+    answer: "Recibimos la gran mayoría de tarjetas: franquicias globales como Visa, Mastercard, American Express, tarjetas bancarias tradicionales, y también tarjetas de retail como Éxito, Falabella, Codensa, Alkosto, entre otras.",
+  },
+  {
+    question: "¿A cuántas cuotas puedo diferir el avance?",
+    answer: "Tienes total flexibilidad. Puedes diferir el monto retirado desde 1 sola cuota hasta 36 cuotas, según te convenga.",
+  },
+  {
+    question: "¿Mi tarjeta se debe quedar en sus oficinas?",
+    answer: "Para nada. El proceso es inmediato y siempre mantienes tu tarjeta contigo. Haces la compra en nuestro datáfono y te llevas efectivo e instrumento en seguida.",
+  }
+];
+
+const schemaStructuredData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(faq => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer
+    }
+  }))
+});
+---
+
+<Layout
+  title="Avances de Tarjetas de Crédito | Cambio de Cupo por Efectivo | Prendautos"
+  description="Cambia el cupo de tu tarjeta de crédito por dinero en efectivo en 15 minutos. Costo transparente: 12% para franquicias, 18% para Codensa. Difiere a 36 cuotas."
+  activeNav="avances-tarjetas"
+>
+  <script type="application/ld+json" set:html={schemaStructuredData}></script>
+
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Avances Tarjetas de Crédito" },
+    ]}
+  />
+
+  <PageHero
+    title="Avances de Tarjetas de Crédito: "
+    emphasis="Cambio de Cupo"
+    titleSuffix=" por Efectivo al Instante"
+    lede="Entregamos tu préstamo de dinero en solo 15 minutos. Difiere la transacción a las cuotas que desees."
+    ctaText="Cambiar mi cupo por efectivo"
+    ctaHref="#"
+    isAdvanceModal={true}
+  />
+
+  <ContentProse>
+    <h2>¿Cómo funciona el proceso?</h2>
+    <p>
+      Hacer un avance de tu tarjeta de crédito (también conocido como cambio de cupo) es la solución más rápida para obtener liquidez sin endeudarte con nuevos créditos. Funciona como una compra regular, lo que significa que conservas los beneficios de diferir de tu propio banco. Sigue estos 3 simples pasos:
+    </p>
+
+    <ol>
+      <li><strong>Visítanos personalmente:</strong> Acércate a nuestras oficinas en Bogotá o Medellín con tu documento de identidad (Cédula de Ciudadanía) y tu Tarjeta de Crédito física.</li>
+      <li><strong>Realiza la transacción:</strong> Pasamos tu tarjeta por nuestro datáfono por el monto que necesitas retirar, exactamente como si estuvieras realizando una compra.</li>
+      <li><strong>Recibe tu efectivo inmediatamente:</strong> Firmas el voucher de la compra y, en máximo 15 minutos, te transferimos a tu cuenta bancaria o te entregamos el efectivo físico.</li>
+    </ol>
+
+    <h2>Transparencia total de Costos</h2>
+    <p>
+      Queremos que tengas absoluta claridad sobre el valor del servicio desde antes de venir. La plataforma de procesamiento nos cobra una comisión, la cual nosotros trasladamos con transparencia:
+    </p>
+    
+    <ul>
+      <li><strong>Tarjetas de Franquicias, Retail y Bancos:</strong> Cobramos el <strong>12%</strong> del monto retirado. <i>(Ej: Si pasas tu tarjeta por $1.000.000, te entregamos $880.000 y el banco te cobra a ti tus cuotas regulares por el total).</i></li>
+      <li><strong>Exclusivo para la Tarjeta Crédito Fácil Codensa:</strong> Cobramos el <strong>18%</strong>, dada la matriz de comisiones impuesta por su red procesadora.</li>
+    </ul>
+
+    <Callout>
+      <p>
+        <strong>¿A cuántas cuotas puedo diferir?</strong> Puedes diferir tu avance <strong>hasta en 36 cuotas</strong> dependiendo del cupo y las políticas establecidas por tu banco emisor. Nos dices el número de meses al pasar el datáfono, y listo.
+      </p>
+    </Callout>
+
+    <h2>Redes de Tarjetas Aceptadas</h2>
+    <p>Conoce nuestras alternativas según el tipo de tarjeta que manejas:</p>
+    <ul>
+      <li><a href="/avances-tarjetas-almacenes">Tarjetas de Almacenes de Cadena (Éxito, Falabella, Alkosto, Ripley, Jumbo)</a></li>
+      <li><a href="/avances-tarjetas-bancos">Tarjetas Bancarias (Bancolombia, Davivienda, Colpatria, BBVA)</a></li>
+      <li><a href="/avances-franquicias-y-apps">Franquicias Globales y Fintechs (Visa, Mastercard, RappiCard, Amex)</a></li>
+      <li><a href="/avances-efectivo-tarjeta-codensa">Tarjeta de Crédito Fácil Codensa</a></li>
+    </ul>
+
+    <h2>Preguntas Frecuentes sobre Avances</h2>
+    <div class="not-prose mt-8 mb-12">
+      <FAQAccordion client:load items={faqs} />
+    </div>
+
+  </ContentProse>
+
+  <FinalCta title="¿Listo para convertir tu cupo en efectivo al instante?" subtitle="Obtén tu dinero en 15 minutos visitando nuestras oficinas." ctaText="Cambiar mi cupo por efectivo" ctaHref="#" isAdvanceModal={true} />
+
+</Layout>

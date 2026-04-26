@@ -10,7 +10,8 @@ import {
   MapPin,
   HelpCircle,
   X,
-  Menu
+  Menu,
+  CreditCard
 } from "lucide-react";
 
 export interface NavLink {
@@ -25,6 +26,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: `${import.meta.env.BASE_URL}/prestamos-vehiculos`, label: "Préstamos", key: "prestamos", icon: BadgeDollarSign },
   { href: `${import.meta.env.BASE_URL}/sin-dejar-el-carro`, label: "Sin dejar el carro", key: "sin-dejar-el-carro", icon: CarFront },
   { href: `${import.meta.env.BASE_URL}/pignoracion`, label: "Pignoración", key: "pignoracion", icon: RefreshCcw },
+  { href: `${import.meta.env.BASE_URL}/avances-tarjetas-de-credito`, label: "Avances Tarjetas", key: "avances-tarjetas", icon: CreditCard },
   { href: `${import.meta.env.BASE_URL}/simulador`, label: "Simulador", key: "simulador", icon: Calculator },
   { href: `${import.meta.env.BASE_URL}/nosotros`, label: "Nosotros", key: "nosotros", icon: Users },
   { href: `${import.meta.env.BASE_URL}/oficinas`, label: "Oficinas", key: "oficinas", icon: MapPin },

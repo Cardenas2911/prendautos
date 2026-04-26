@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import FinalCta from "../components/FinalCta.astro";
+
+---
+
+<Layout
+  title="Cambiar Cupo Visa, Mastercard, AMEX o Rappi | Prendautos"
+  description="Avanza dinero en efectivo usando tus franquicias principales o Fintechs en Colombia. Proceso seguro en 15 minutos."
+  activeNav="avances-tarjetas"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Avances Tarjetas de Crédito", href: "/avances-tarjetas-de-credito" },
+      { label: "Franquicias y Apps" },
+    ]}
+  />
+
+  <PageHero
+    title="Cambio de Cupo para "
+    emphasis="Franquicias y Fintechs "
+    titleSuffix=""
+    lede="Recibimos todos los emisores principales, sin importar si tu tarjeta proviene de un banco tradicional o de una cuenta digital/neobanco como RappiPay o Nu."
+    ctaText="Cambiar mi cupo por efectivo"
+    ctaHref="#"
+    isAdvanceModal={true}
+  />
+
+  <ContentProse>
+    <h2>Cualquier plataforma a tu servicio</h2>
+    <p>
+      Si cuentas con espacio en el cupo de compras internacional o nacional en Colombia, puedes acceder a nuestro proceso independientemente de qué bandera acompañe tu plástico. Recibimos las franquicias top:
+    </p>
+
+    <ul>
+      <li><strong>Cambio de cupo Global Visa</strong></li>
+      <li><strong>Avances Mastercard</strong></li>
+      <li><strong>Avances tarjeta de crédito American Express (Amex)</strong></li>
+      <li><strong>Avances tarjeta Diners Club</strong></li>
+    </ul>
+
+    <h2>Neobancos y Apps</h2>
+    <p>
+      El ecosistema financiero evolucionó, y con él, también incorporamos los avances físicos sobre tarjetas nacidas de la economía digital:
+    </p>
+    <ul>
+      <li><strong>Avances Tarjeta Rappi / RappiCard</strong></li>
+      <li><strong>Tarjetas de crédito NuBank</strong></li>
+      <li><strong>Lulo Bank y Ualá</strong></li>
+    </ul>
+
+    <p>La tarifa sigue siendo nuestra promoción consolidada del <strong>12%</strong> y se procesa casi de forma instantánea desde nuestro sistema POS.</p>
+
+    <p><a href="/avances-tarjetas-de-credito">Volver a la selección general de tarjetas</a></p>
+
+  </ContentProse>
+
+  <FinalCta title="Liquidez en mano con tu franquicia favorita" subtitle="Tráela directamente a nuestras oficinas y recibe tu dinero en efectivo asegurado." ctaText="Cambiar mi cupo por efectivo" ctaHref="#" isAdvanceModal={true} />
+
+</Layout>

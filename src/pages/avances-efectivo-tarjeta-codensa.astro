@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import Callout from "../components/Callout.astro";
+import FinalCta from "../components/FinalCta.astro";
+
+---
+
+<Layout
+  title="Cambio de Cupo Tarjeta Codensa | Efectivo Prendautos"
+  description="Avanza de forma segura tu cupo de tu Tarjeta de Crédito Fácil Codensa. Retira dinero rápidamente asistiendo a nuestras oficinas."
+  activeNav="avances-tarjetas"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Avances Tarjetas de Crédito", href: "/avances-tarjetas-de-credito" },
+      { label: "Tarjeta Codensa" },
+    ]}
+  />
+
+  <PageHero
+    title="Cambio de Cupo para "
+    emphasis="Tarjeta Codensa"
+    titleSuffix=""
+    lede="Sabemos que la Tarjeta Crédito Fácil Codensa es una de las más populares de Colombia. Por su estructura y plataforma, cuenta con un costo diferente, pero el proceso sigue siendo expedito en 15 minutos."
+    ctaText="Cambiar mi cupo por efectivo"
+    ctaHref="#"
+    isAdvanceModal={true}
+  />
+
+  <ContentProse>
+    <h2>Efectivo hoy con Codensa</h2>
+    <p>
+      Transformar el saldo de tu <strong>Crédito Fácil Codensa</strong> a dinero de bolsillo es un procedimiento ágil que salva a las familias en aprietos de final de mes, o sirve para fondear necesidades empresariales rápidas en Bogotá sin solicitar permisos burocráticos.
+    </p>
+
+    <Callout>
+      <p><strong>Atención al costo:</strong> Por comisiones administrativas impuestas por el sistema exclusivo de Codensa, nuestro costo de intermediación para este avance de tarjeta es del <strong>18%</strong> en lugar del 12% habitual. Tú difieres este monto a los meses que selecciones al momento de firmar.</p>
+    </Callout>
+
+    <h2>Pasos para el avance en efectivo Tarjeta Codensa:</h2>
+    <ul>
+      <li>Deberás venir en tu calidad de titular con tu Cédula original.</li>
+      <li>Díctanos de cuánto requieres el avance.</li>
+      <li>Lo pasamos por el POS, se genera la transacción y de 10 a 15 minutos te pagamos el dinero.</li>
+    </ul>
+
+    <p><a href="/avances-tarjetas-de-credito">Volver a conocer qué más tarjetas admitimos</a></p>
+
+  </ContentProse>
+
+  <FinalCta title="Obtén el máximo provecho de tu Crédito Fácil Codensa" subtitle="Visítanos en Bogotá para materializar tu cupo." ctaText="Cambiar mi cupo por efectivo" ctaHref="#" isAdvanceModal={true} />
+
+</Layout>
