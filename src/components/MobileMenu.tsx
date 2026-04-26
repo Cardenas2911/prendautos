@@ -9,9 +9,10 @@ import {
   Users, 
   MapPin,
   HelpCircle,
-  MessageCircle,
   X,
-  Menu
+  Menu,
+  Facebook,
+  Instagram
 } from "lucide-react";
 
 export interface NavLink {
@@ -82,18 +83,31 @@ export default function MobileMenu({ active = null }: Props) {
         >
           {/* Backdrop Blur Overlay */}
           <div
-            className="absolute inset-0 bg-dark/40 backdrop-blur-md animate-[fadeIn_0.3s_ease]"
+            className="absolute inset-0 bg-dark/60 backdrop-blur-sm animate-[fadeIn_0.3s_ease]"
             onClick={() => setOpen(false)}
           />
 
-          {/* Glassmorphism Panel */}
-          <div className="absolute right-0 sm:right-4 top-0 sm:top-4 bottom-0 sm:bottom-4 w-full sm:max-w-[320px] bg-[#0a1110]/95 backdrop-blur-3xl sm:rounded-[32px] sm:border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden animate-[slideIn_0.4s_cubic-bezier(0.16,1,0.3,1)]">
+          {/* Glassmorphism Panel - Gradient Verde Oscuro */}
+          <div className="absolute right-0 sm:right-4 top-0 sm:top-4 bottom-0 sm:bottom-4 w-full sm:max-w-[340px] bg-gradient-to-b from-[#081714]/95 to-[#0B4032]/95 backdrop-blur-xl sm:rounded-[32px] sm:border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden animate-[slideIn_0.4s_cubic-bezier(0.16,1,0.3,1)]">
             
-            {/* Header */}
-            <div className="flex items-center justify-between px-6 mx-2 pt-6 pb-4 border-b border-light/10 relative">
-              <span className="font-mono text-xs tracking-[0.2em] font-semibold text-white/50 uppercase">
-                Menú Principal
-              </span>
+            {/* Header: Logo */}
+            <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-white/10 relative">
+              <a href={`${import.meta.env.BASE_URL}/`} className="flex items-center gap-2" onClick={() => setOpen(false)}>
+                <svg width="28" height="28" viewBox="0 0 200 200" aria-hidden="true">
+                  <path
+                    d="M 50 160 L 50 60 A 30 30 0 0 1 80 30 L 110 30 A 40 40 0 0 1 150 70 A 40 40 0 0 1 110 110 L 80 110"
+                    fill="none"
+                    stroke="#ffffff"
+                    strokeWidth="20"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle cx="155" cy="160" r="11" fill="#E8714A" />
+                </svg>
+                <span className="font-extrabold text-2xl tracking-tight text-white">
+                  prend<span className="text-accent">autos</span>
+                </span>
+              </a>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
@@ -117,58 +131,60 @@ export default function MobileMenu({ active = null }: Props) {
                         onClick={() => setOpen(false)}
                         className={`group relative flex items-center gap-4 px-4 py-3.5 rounded-2xl transition-all duration-300 ${
                           isActive 
-                            ? "bg-white/20 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" 
-                            : "text-white/70 hover:bg-white/10 hover:text-white"
+                            ? "bg-white/10 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]" 
+                            : "text-white/80 hover:bg-white/5 hover:text-white"
                         }`}
                       >
-                        <div className={`p-2 rounded-xl transition-colors ${isActive ? "bg-primary text-white" : "bg-white/5 group-hover:bg-white/10"}`}>
+                        <div className={`p-2 rounded-xl transition-colors ${isActive ? "bg-accent/80 text-white" : "bg-white/5 group-hover:bg-white/10"}`}>
                            <Icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
                         </div>
-                        <span className="font-semibold text-[15px] tracking-tight">{link.label}</span>
+                        <span className="font-medium text-[16px] tracking-tight">{link.label}</span>
                         {isActive && (
-                          <div className="absolute right-4 w-2 h-2 rounded-full bg-[#E8714A] shadow-[0_0_10px_#E8714A]" />
+                          <div className="absolute right-4 w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_#E8714A]" />
                         )}
                       </a>
                     </li>
                   );
                 })}
 
-                <li>
+                <li className="mt-2 pt-2 border-t border-white/10">
                   <a
                     href={`${import.meta.env.BASE_URL}/preguntas-frecuentes`}
                     onClick={() => setOpen(false)}
-                    className="group flex items-center gap-4 px-4 py-3.5 rounded-2xl text-white/70 hover:bg-white/10 hover:text-white transition-all duration-300 mt-2"
+                    className="group flex items-center gap-4 px-4 py-3.5 rounded-2xl text-white/80 hover:bg-white/5 hover:text-white transition-all duration-300"
                   >
                     <div className="p-2 rounded-xl bg-white/5 group-hover:bg-white/10 transition-colors">
                       <HelpCircle className="w-5 h-5" strokeWidth={2} />
                     </div>
-                    <span className="font-semibold text-[15px] tracking-tight">Ayuda</span>
+                    <span className="font-medium text-[16px] tracking-tight">Ayuda</span>
                   </a>
                 </li>
               </ul>
             </nav>
 
-            {/* Bottom Actions */}
-            <div className="p-6 border-t border-white/10 bg-black/20 flex flex-col gap-3">
+            {/* Bottom Actions & Social */}
+            <div className="p-6 border-t border-white/10 bg-black/10 flex flex-col gap-4">
               <a
                 href={`${import.meta.env.BASE_URL}/simulador`}
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-[#0e8f7a] text-white shadow-[0_0_20px_rgba(11,107,92,0.4)] font-semibold text-base px-6 py-4 rounded-2xl hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-[#d35f37] text-white shadow-[0_4px_20px_rgba(232,113,74,0.4)] font-bold text-base px-6 py-4 rounded-2xl hover:opacity-90 transition-opacity"
               >
                 Solicitar préstamo →
               </a>
-              <a
-                href="https://wa.me/573113547995"
-                target="_blank"
-                rel="noopener"
-                onClick={() => setOpen(false)}
-                className="inline-flex items-center justify-center gap-2 bg-[#25D366]/20 border border-[#25D366]/40 text-white font-semibold text-[15px] px-6 py-3.5 rounded-2xl hover:bg-[#25D366]/30 transition-all backdrop-blur-md"
-              >
-                <div className="bg-[#25D366] text-white p-1 rounded-full">
-                   <MessageCircle className="w-4 h-4" />
-                </div>
-                Contactar asesor
-              </a>
+              
+              <div className="flex items-center justify-center gap-6 pt-3">
+                <a href="#" className="text-white/60 hover:text-white hover:scale-110 transition-all rounded-full p-2 bg-white/5 hover:bg-white/10">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-white/60 hover:text-white hover:scale-110 transition-all rounded-full p-2 bg-white/5 hover:bg-white/10">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="https://wa.me/573113547995" target="_blank" rel="noopener" className="text-white/60 hover:text-[#25D366] hover:scale-110 transition-all rounded-full p-2 bg-white/5 hover:bg-white/10">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2a10 10 0 00-8.6 14.9L2 22l5.2-1.4A10 10 0 1012 2z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>,
@@ -185,7 +201,7 @@ export default function MobileMenu({ active = null }: Props) {
         }
         @keyframes fadeIn {
           from { opacity: 0; backdrop-filter: blur(0px); }
-          to { opacity: 1; backdrop-filter: blur(12px); }
+          to { opacity: 1; backdrop-filter: blur(8px); }
         }
         @keyframes slideIn {
           from { transform: translateX(100%) scale(0.95); opacity: 0; }
