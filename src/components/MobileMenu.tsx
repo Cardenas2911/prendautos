@@ -117,8 +117,8 @@ export default function MobileMenu({ active = null }: Props) {
             </div>
 
             {/* Scrollable Links */}
-            <nav className="flex-1 overflow-y-auto px-4 py-4 hide-scrollbar">
-              <ul className="flex flex-col gap-1.5">
+            <nav className="flex-1 overflow-y-auto px-4 py-6 hide-scrollbar">
+              <ul className="flex flex-col gap-3">
                 {NAV_LINKS.map((link) => {
                   const isActive = active === link.key;
                   const Icon = link.icon;
@@ -127,13 +127,13 @@ export default function MobileMenu({ active = null }: Props) {
                       <a
                         href={link.href}
                         onClick={() => setOpen(false)}
-                        className={`group relative flex items-center gap-4 px-4 py-3.5 rounded-2xl transition-all duration-300 ${
+                        className={`group relative flex items-center gap-4 px-4 py-4 rounded-2xl transition-all duration-300 ${
                           isActive 
                             ? "bg-white/10 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]" 
                             : "text-white/80 hover:bg-white/5 hover:text-white"
                         }`}
                       >
-                        <div className={`p-2 rounded-xl transition-colors ${isActive ? "bg-accent/80 text-white" : "bg-white/5 group-hover:bg-white/10"}`}>
+                        <div className={`p-2.5 rounded-xl transition-colors ${isActive ? "bg-accent/80 text-white" : "bg-white/5 group-hover:bg-white/10"}`}>
                            <Icon className="w-5 h-5" strokeWidth={isActive ? 2.5 : 2} />
                         </div>
                         <span className="font-medium text-[16px] tracking-tight">{link.label}</span>
@@ -145,13 +145,13 @@ export default function MobileMenu({ active = null }: Props) {
                   );
                 })}
 
-                <li className="mt-2 pt-2 border-t border-white/10">
+                <li className="mt-3 pt-3 border-t border-white/10">
                   <a
                     href={`${import.meta.env.BASE_URL}/preguntas-frecuentes`}
                     onClick={() => setOpen(false)}
-                    className="group flex items-center gap-4 px-4 py-3.5 rounded-2xl text-white/80 hover:bg-white/5 hover:text-white transition-all duration-300"
+                    className="group flex items-center gap-4 px-4 py-4 rounded-2xl text-white/80 hover:bg-white/5 hover:text-white transition-all duration-300"
                   >
-                    <div className="p-2 rounded-xl bg-white/5 group-hover:bg-white/10 transition-colors">
+                    <div className="p-2.5 rounded-xl bg-white/5 group-hover:bg-white/10 transition-colors">
                       <HelpCircle className="w-5 h-5" strokeWidth={2} />
                     </div>
                     <span className="font-medium text-[16px] tracking-tight">Ayuda</span>
