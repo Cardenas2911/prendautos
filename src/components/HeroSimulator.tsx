@@ -74,7 +74,7 @@ export default function HeroSimulator() {
       </div>
 
       <a
-        href={`${import.meta.env.BASE_URL}simulador`}
+        href={`${import.meta.env.BASE_URL}/simulador`}
         className="w-full justify-center mt-5 inline-flex items-center gap-2 bg-primary text-white font-semibold text-sm px-[18px] py-2.5 rounded-[10px] hover:bg-primary-dark transition-colors"
       >
         Solicitar este préstamo
