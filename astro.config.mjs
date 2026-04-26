@@ -6,8 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://cardenas2911.github.io',
-  base: '/prendautos',
+  site: 'https://prendautos.com',
   integrations: [react()],
 
   vite: {

@@ -179,11 +179,11 @@ export default function Simulator() {
 
         <p className="text-xs text-white/45 mt-3.5 leading-[1.5]">
           Al enviar aceptas nuestros{" "}
-          <a href={`${import.meta.env.BASE_URL}/terminos-y-condiciones`} className="text-accent">
+          <a href="/terminos-y-condiciones" className="text-accent">
             términos
           </a>{" "}
           y la{" "}
-          <a href={`${import.meta.env.BASE_URL}/politicas-de-privacidad`} className="text-accent">
+          <a href="/politicas-de-privacidad" className="text-accent">
             política de privacidad
           </a>
           . Un asesor te contactará en menos de 15 minutos.

@@ -7,13 +7,13 @@ export interface NavLink {
 }
 
 export const NAV_LINKS: NavLink[] = [
-  { href: `${import.meta.env.BASE_URL}/`, label: "Inicio", key: "inicio" },
-  { href: `${import.meta.env.BASE_URL}/prestamos-vehiculos`, label: "Préstamos", key: "prestamos" },
-  { href: `${import.meta.env.BASE_URL}/sin-dejar-el-carro`, label: "Sin dejar el carro", key: "sin-dejar-el-carro" },
-  { href: `${import.meta.env.BASE_URL}/pignoracion`, label: "Pignoración", key: "pignoracion" },
-  { href: `${import.meta.env.BASE_URL}/simulador`, label: "Simulador", key: "simulador" },
-  { href: `${import.meta.env.BASE_URL}/nosotros`, label: "Nosotros", key: "nosotros" },
-  { href: `${import.meta.env.BASE_URL}/oficinas`, label: "Oficinas", key: "oficinas" },
+  { href: `/`, label: "Inicio", key: "inicio" },
+  { href: `/prestamos-vehiculos`, label: "Préstamos", key: "prestamos" },
+  { href: `/sin-dejar-el-carro`, label: "Sin dejar el carro", key: "sin-dejar-el-carro" },
+  { href: `/pignoracion`, label: "Pignoración", key: "pignoracion" },
+  { href: `/simulador`, label: "Simulador", key: "simulador" },
+  { href: `/nosotros`, label: "Nosotros", key: "nosotros" },
+  { href: `/oficinas`, label: "Oficinas", key: "oficinas" },
 ];
 
 interface Props {
@@ -140,7 +140,7 @@ export default function MobileMenu({ active = null }: Props) {
                 })}
                 <li>
                   <a
-                    href={`${import.meta.env.BASE_URL}/preguntas-frecuentes`}
+                    href="/preguntas-frecuentes"
                     onClick={() => setOpen(false)}
                     className="block py-4 text-lg font-semibold tracking-tight text-dark hover:text-primary border-b border-border transition-colors"
                   >
@@ -152,7 +152,7 @@ export default function MobileMenu({ active = null }: Props) {
 
             <div className="p-5 border-t border-border flex flex-col gap-3 bg-light/40">
               <a
-                href={`${import.meta.env.BASE_URL}/simulador`}
+                href="/simulador"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold text-base px-7 py-4 rounded-xl hover:bg-primary-dark transition-colors"
               >
