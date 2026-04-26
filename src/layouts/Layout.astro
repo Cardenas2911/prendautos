@@ -60,7 +60,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString(
 
     <slot name="head" />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col overflow-x-hidden">
     <Topbar />
     <Nav active={activeNav} />
     <main class="flex-1">
