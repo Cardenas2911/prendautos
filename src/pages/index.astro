@@ -99,10 +99,10 @@ const steps = [
         </p>
 
         <div class="flex gap-3 flex-wrap mb-10">
-          <Button href="/simulador" variant="primary" size="lg">
+          <Button href={`${import.meta.env.BASE_URL}simulador`} variant="primary" size="lg">
             Calcular mi préstamo →
           </Button>
-          <Button href="/sin-dejar-el-carro" variant="outline" size="lg">
+          <Button href={`${import.meta.env.BASE_URL}sin-dejar-el-carro`} variant="outline" size="lg">
             ¿Cómo funciona?
           </Button>
         </div>
@@ -197,7 +197,7 @@ const steps = [
 
       <div class="grid lg:grid-cols-[1.4fr_1fr_1fr] gap-4">
         <a
-          href="/sin-dejar-el-carro"
+          href={`${import.meta.env.BASE_URL}sin-dejar-el-carro`}
           class="lg:row-span-2 bg-primary text-white rounded-3xl p-9 transition-all hover:-translate-y-1 relative overflow-hidden flex flex-col"
         >
           <div
@@ -233,7 +233,7 @@ const steps = [
         </a>
 
         <a
-          href="/compra-cartera"
+          href={`${import.meta.env.BASE_URL}compra-cartera`}
           class="bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary"
         >
           <div
@@ -265,7 +265,7 @@ const steps = [
         </a>
 
         <a
-          href="/prestamos-taxis"
+          href={`${import.meta.env.BASE_URL}prestamos-taxis`}
           class="bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary"
         >
           <div
@@ -297,7 +297,7 @@ const steps = [
         </a>
 
         <a
-          href="/prestamos-motos"
+          href={`${import.meta.env.BASE_URL}prestamos-motos`}
           class="lg:col-span-2 bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary"
         >
           <div

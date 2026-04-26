@@ -6,12 +6,22 @@ export interface NavLink {
   key: string;
 }
 
+export const NAV_LINKS: NavLink[] = [
+  { href: import.meta.env.BASE_URL, label: "Inicio", key: "inicio" },
+  { href: `${import.meta.env.BASE_URL}prestamos-vehiculos`, label: "Préstamos", key: "prestamos" },
+  { href: `${import.meta.env.BASE_URL}sin-dejar-el-carro`, label: "Sin dejar el carro", key: "sin-dejar-el-carro" },
+  { href: `${import.meta.env.BASE_URL}pignoracion`, label: "Pignoración", key: "pignoracion" },
+  { href: `${import.meta.env.BASE_URL}simulador`, label: "Simulador", key: "simulador" },
+  { href: `${import.meta.env.BASE_URL}nosotros`, label: "Nosotros", key: "nosotros" },
+  { href: `${import.meta.env.BASE_URL}oficinas`, label: "Oficinas", key: "oficinas" },
+];
+
 interface Props {
-  links: NavLink[];
+  links?: NavLink[];
   active: string | null;
 }
 
-export default function MobileMenu({ links, active }: Props) {
+export default function MobileMenu({ active = null }: Props) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -101,7 +111,7 @@ export default function MobileMenu({ links, active }: Props) {
 
             <nav className="flex-1 overflow-y-auto px-5 py-6">
               <ul className="flex flex-col">
-                {links.map((link) => {
+                {NAV_LINKS.map((link) => {
                   const isActive = active === link.key;
                   return (
                     <li key={link.key}>
@@ -130,7 +140,7 @@ export default function MobileMenu({ links, active }: Props) {
                 })}
                 <li>
                   <a
-                    href="/preguntas-frecuentes"
+                    href={`${import.meta.env.BASE_URL}preguntas-frecuentes`}
                     onClick={() => setOpen(false)}
                     className="block py-4 text-lg font-semibold tracking-tight text-dark hover:text-primary border-b border-border transition-colors"
                   >
@@ -142,7 +152,7 @@ export default function MobileMenu({ links, active }: Props) {
 
             <div className="p-5 border-t border-border flex flex-col gap-3 bg-light/40">
               <a
-                href="/simulador"
+                href={`${import.meta.env.BASE_URL}simulador`}
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold text-base px-7 py-4 rounded-xl hover:bg-primary-dark transition-colors"
               >
