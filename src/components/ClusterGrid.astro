@@ -1,0 +1,35 @@
+---
+interface Card {
+  href: string;
+  tag: string;
+  title: string;
+  description: string;
+  arrow: string;
+}
+
+interface Props {
+  cards: Card[];
+}
+
+const { cards } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 not-prose">
+  {
+    cards.map((c) => (
+      <a
+        href={c.href}
+        class="block bg-white border border-border rounded-2xl px-8 py-7 transition-all hover:border-primary hover:-translate-y-0.5 hover:shadow-card"
+      >
+        <span class="font-mono text-[11px] text-primary bg-primary/10 px-2.5 py-1 rounded-md tracking-wider uppercase font-semibold inline-block mb-3.5">
+          {c.tag}
+        </span>
+        <h4 class="text-xl font-bold tracking-tight mb-2 text-dark">
+          {c.title}
+        </h4>
+        <p class="text-sm text-gray leading-snug mb-4">{c.description}</p>
+        <span class="text-sm text-primary font-semibold">{c.arrow}</span>
+      </a>
+    ))
+  }
+</div>

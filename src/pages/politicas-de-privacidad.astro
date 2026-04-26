@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+---
+
+<Layout
+  title="Política de privacidad | Prendautos"
+  description="Política de tratamiento de datos personales de Prendautos conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013."
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Política de privacidad" },
+    ]}
+  />
+
+  <PageHero
+    title="Política de "
+    emphasis="privacidad"
+    titleSuffix="."
+    showCtas={false}
+  />
+
+  <ContentProse maxWidth={820} variant="legal">
+    <h2>1. Responsable del tratamiento</h2>
+    <p>
+      Prendautos S.A.S., NIT XXX.XXX.XXX-X, con domicilio principal en Calle 10
+      # 36-12, Medellín, es el responsable del tratamiento de los datos
+      personales recolectados a través de este sitio web.
+    </p>
+
+    <h2>2. Finalidades del tratamiento</h2>
+    <ul>
+      <li>Evaluar solicitudes de préstamo</li>
+      <li>Verificar identidad y elegibilidad</li>
+      <li>Cumplir obligaciones contractuales y legales</li>
+      <li>Comunicar promociones y actualizaciones (con consentimiento previo)</li>
+    </ul>
+
+    <h2>3. Derechos del titular</h2>
+    <p>
+      Puedes conocer, actualizar, rectificar y solicitar la supresión de tus
+      datos personales conforme a la <strong>Ley 1581 de 2012</strong> y el
+      <strong>Decreto 1377 de 2013</strong>.
+    </p>
+
+    <h2>4. Canales</h2>
+    <p>
+      Cualquier solicitud puede dirigirse al correo <strong
+        >privacidad@prendautos.co</strong
+      >.
+    </p>
+
+    <h2>5. Seguridad</h2>
+    <p>
+      Implementamos medidas técnicas, humanas y administrativas para proteger
+      tu información contra acceso no autorizado, pérdida o uso indebido.
+    </p>
+
+    <p style="margin-top:40px;color:var(--color-gray);font-size:14px;">
+      Última actualización: enero de 2026
+    </p>
+  </ContentProse>
+</Layout>

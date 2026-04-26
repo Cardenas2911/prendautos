@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import Callout from "../components/Callout.astro";
+import FinalCta from "../components/FinalCta.astro";
+---
+
+<Layout
+  title="¿Qué es pignorar un carro? | Prendautos"
+  description="Pignorar un vehículo es ofrecerlo como garantía real de un préstamo. Definición legal, alcance y diferencias con otros créditos."
+  activeNav="pignoracion"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Pignoración", href: "/pignoracion" },
+      { label: "¿Qué es?" },
+    ]}
+  />
+
+  <PageHero
+    title="¿Qué es "
+    emphasis="pignorar"
+    titleSuffix=" un carro?"
+    lede="Pignorar es ofrecer tu vehículo como garantía real de un préstamo. Acá te explicamos qué significa eso en términos legales y prácticos."
+  />
+
+  <ContentProse>
+    <h2>Definición</h2>
+    <p>
+      La <strong>pignoración</strong> (también llamada "prenda sin tenencia"
+      cuando no entregas el bien) es un contrato mediante el cual ofreces tu
+      vehículo como garantía del cumplimiento de un préstamo. Está regulada por
+      el <strong>Código Civil colombiano</strong> y por la <strong
+        >Ley 1676 de 2013</strong
+      >, que moderniza el régimen de garantías mobiliarias.
+    </p>
+
+    <h2>¿Quién es dueño del carro durante la pignoración?</h2>
+    <p>
+      <strong>Tú sigues siendo el propietario.</strong> El vehículo continúa registrado
+      a tu nombre en el RUNT. Lo que cambia es que aparece un gravamen — una nota
+      que dice "este vehículo está respaldando un crédito con X entidad". Mientras
+      pagues normalmente, ese gravamen no afecta el uso diario.
+    </p>
+
+    <Callout>
+      <p>
+        <strong>Lo único que no puedes hacer:</strong> vender el vehículo a un tercero
+        sin que el comprador asuma la prenda o sin haber cancelado el crédito antes.
+      </p>
+    </Callout>
+
+    <h2>¿Cómo se diferencia de otros créditos?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Garantía</th>
+          <th>Requiere historial crediticio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Crédito de libre inversión</td>
+          <td>Solo tu firma</td>
+          <td>Sí, riguroso</td>
+        </tr>
+        <tr>
+          <td>Crédito vehicular bancario</td>
+          <td>El carro nuevo que compras</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td><strong>Pignoración (Prendautos)</strong></td>
+          <td><strong>Tu vehículo actual</strong></td>
+          <td><strong>No</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>¿Es seguro pignorar?</h2>
+    <p>
+      Sí, <strong>siempre y cuando</strong> el contrato se firme en notaría, se
+      registre en el RUNT y trabajes con una empresa establecida. En Prendautos
+      llevamos 18 años haciéndolo y todos nuestros préstamos quedan formalizados
+      con escritura pública.
+    </p>
+  </ContentProse>
+
+  <FinalCta />
+</Layout>

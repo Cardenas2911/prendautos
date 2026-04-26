@@ -1,0 +1,131 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import Callout from "../components/Callout.astro";
+import FinalCta from "../components/FinalCta.astro";
+---
+
+<Layout
+  title="Préstamo sobre vehículo sin dejar el carro | Prendautos"
+  description="Préstamo sobre tu vehículo sin entregarlo. Conservas tu carro mientras pagas. Pignoración legal y notariada. Aprobación en 30 minutos."
+  activeNav="sin-dejar-el-carro"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Préstamos", href: "/prestamos-vehiculos" },
+      { label: "Sin dejar el carro" },
+    ]}
+  />
+
+  <PageHero
+    title="Préstamo sin custodia. "
+    emphasis="Conservas el carro"
+    titleSuffix=" mientras pagas."
+    lede="La diferencia clave: nosotros no nos quedamos con tu vehículo. Sigues manejándolo, trabajando con él y viviendo tu vida normal — mientras pagas cuotas como un crédito tradicional."
+  />
+
+  <ContentProse>
+    <h2>¿Qué significa "sin custodia"?</h2>
+    <p>
+      En la mayoría de prestamistas informales, el vehículo se entrega
+      físicamente como garantía durante todo el plazo. Eso paraliza tu vida —
+      sobre todo si trabajas con tu carro. <strong
+        >En Prendautos esto no pasa.</strong
+      > Firmamos una pignoración legal en notaría, pero el carro queda en tus manos.
+    </p>
+    <Callout>
+      <p>
+        <strong>Resultado:</strong> manejas tu vehículo todos los días. Solo lo
+        entregas si dejas de pagar y se ejecuta el proceso legal — exactamente
+        como en un crédito vehicular bancario.
+      </p>
+    </Callout>
+
+    <h2>Comparativa</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Característica</th>
+          <th>Prestamistas tradicionales</th>
+          <th>Prendautos sin custodia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>¿Te quitan el carro?</td>
+          <td style="color:var(--color-gray);">Sí, lo guardan</td>
+          <td style="color:var(--color-primary);font-weight:600;">
+            No, lo conservas
+          </td>
+        </tr>
+        <tr>
+          <td>Tiempo de trámite</td>
+          <td style="color:var(--color-gray);">5–15 días</td>
+          <td style="color:var(--color-primary);font-weight:600;">
+            30 minutos
+          </td>
+        </tr>
+        <tr>
+          <td>Datacrédito</td>
+          <td style="color:var(--color-gray);">Obligatorio</td>
+          <td style="color:var(--color-primary);font-weight:600;">
+            No lo consultamos
+          </td>
+        </tr>
+        <tr>
+          <td>Documentación legal</td>
+          <td style="color:var(--color-gray);">Variable / informal</td>
+          <td style="color:var(--color-primary);font-weight:600;">
+            Notariada y RUNT
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Cómo funciona el proceso</h2>
+    <ol>
+      <li>
+        <strong>Simulación online.</strong> Calculas tu monto y plazo en 2
+        minutos.
+      </li>
+      <li>
+        <strong>Peritaje del vehículo.</strong> Validamos valor comercial real y
+        estado.
+      </li>
+      <li>
+        <strong>Firma de prenda en notaría.</strong> Documento legal que protege
+        a ambas partes.
+      </li>
+      <li>
+        <strong>Desembolso.</strong> Transferencia inmediata o efectivo. Sales
+        con tu plata y manejando tu carro.
+      </li>
+    </ol>
+
+    <h2>¿Para quién es ideal?</h2>
+    <ul>
+      <li>Conductores de Uber, DiDi, InDriver, Cabify</li>
+      <li>Taxistas y transportadores informales</li>
+      <li>
+        Mensajeros, comerciantes y emprendedores que dependen del vehículo
+      </li>
+      <li>Familias que usan el carro a diario</li>
+    </ul>
+
+    <h2>Preguntas comunes</h2>
+    <p>
+      <strong>¿Y si dejo de pagar?</strong> Hay un proceso legal de mora con notificaciones
+      previas. Antes de cualquier acción intentamos renegociar contigo.
+    </p>
+    <p>
+      <strong>¿Cuánto me prestan?</strong> Hasta el 50% del valor comercial según
+      peritaje.
+    </p>
+    <p><strong>¿Necesito codeudor?</strong> No. La garantía es tu vehículo.</p>
+  </ContentProse>
+
+  <FinalCta />
+</Layout>

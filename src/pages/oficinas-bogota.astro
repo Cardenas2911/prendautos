@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import MapPlaceholder from "../components/MapPlaceholder.astro";
+import FinalCta from "../components/FinalCta.astro";
+---
+
+<Layout
+  title="Oficina Bogotá Chapinero | Prendautos"
+  description="Visítanos en Carrera 13 # 60-25, Chapinero, Bogotá. Lunes a sábado. Préstamos sobre vehículos en 30 minutos."
+  activeNav="oficinas"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Oficinas", href: "/oficinas" },
+      { label: "Bogotá" },
+    ]}
+  />
+
+  <PageHero
+    title="Prendautos "
+    emphasis="Bogotá"
+    titleSuffix="."
+    lede="Atendemos en Chapinero. Llega con tus documentos y sales con tu plata el mismo día."
+    showCtas={false}
+  />
+
+  <section class="px-8 pt-[60px] pb-24">
+    <div
+      class="max-w-[1000px] mx-auto grid md:grid-cols-2 gap-12 lg:gap-[60px] items-start"
+    >
+      <div class="office-info">
+        <h2>Dirección</h2>
+        <p>
+          <strong>Carrera 13 # 60-25, Local 102</strong><br />
+          Chapinero, Bogotá D.C.
+        </p>
+        <h2>Horario</h2>
+        <p>
+          Lunes a viernes: 8:00 am – 6:00 pm<br />
+          Sábados: 8:00 am – 1:00 pm<br />
+          Domingos: cerrado
+        </p>
+        <h2>Contacto</h2>
+        <p>
+          WhatsApp: <a href="https://wa.me/573113547995">+57 311 354 7995</a><br
+          />
+          Correo: bogota@prendautos.co
+        </p>
+        <h2>Cómo llegar</h2>
+        <ul>
+          <li>TransMilenio: estación Calle 57 (3 cuadras)</li>
+          <li>SITP: rutas que paran en Carrera 13</li>
+          <li>Parqueo público a una cuadra</li>
+        </ul>
+      </div>
+
+      <MapPlaceholder
+        address="Carrera 13 # 60-25"
+        city="Chapinero, Bogotá"
+      />
+    </div>
+  </section>
+
+  <FinalCta />
+</Layout>
+
+<style is:global>
+  .office-info h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 32px 0 12px;
+    color: var(--color-dark);
+  }
+  .office-info h2:first-child {
+    margin-top: 0;
+  }
+  .office-info p,
+  .office-info li {
+    font-size: 16px;
+    color: var(--color-dark);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .office-info a {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  .office-info ul {
+    padding-left: 20px;
+    list-style: disc;
+  }
+</style>

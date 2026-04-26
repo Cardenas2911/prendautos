@@ -1,11 +1,373 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import HeroSimulator from "../components/HeroSimulator.tsx";
+import FinalCta from "../components/FinalCta.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const trust = [
+  { num: "30 min", lbl: "Desembolso" },
+  { num: "18+ años", lbl: "En el mercado" },
+  { num: "100%", lbl: "Legal y notariado" },
+  { num: "Sin", lbl: "Datacrédito" },
+];
+
+const empathy = [
+  {
+    title: "Lo necesito para ya",
+    body:
+      "Una urgencia médica, una oportunidad de negocio, un imprevisto. La vida no espera 15 días — y nosotros tampoco.",
+    tag: "Pre-aprobación en 2 min · Desembolso en 30 min",
+    icon: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+  },
+  {
+    title: "Mi carro es mi trabajo",
+    body:
+      "Manejas para una app, tienes tu propio negocio, el vehículo es parte de tu día a día. Por eso nunca queda en custodia.",
+    tag: "Pignoración legal · Tú conservas el vehículo",
+    icon: '<path d="M3 12h1l1.5-5h13L20 12h1m-5 0a2 2 0 100 4 2 2 0 000-4zm-10 0a2 2 0 100 4 2 2 0 000-4z"/>',
+  },
+  {
+    title: "Quiero entender qué firmo",
+    body:
+      "Antes de prestar tu vehículo como garantía, mereces saber cómo funciona la pignoración y qué pasa en cada escenario.",
+    tag: "Costos claros · Notariado · Cero letra pequeña",
+    icon: '<path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/>',
+  },
+];
+
+const steps = [
+  {
+    num: "PASO 01",
+    title: "Simula online",
+    desc: "Cuéntanos sobre tu vehículo y monto. Pre-aprobación al instante.",
+    time: "2 minutos",
+  },
+  {
+    num: "PASO 02",
+    title: "Validación express",
+    desc: "Verificamos cédula, RUNT y peritaje. Sin Datacrédito.",
+    time: "10 minutos",
+  },
+  {
+    num: "PASO 03",
+    title: "Firma notariada",
+    desc: "Firmas el contrato y la prenda en notaría. Todo legal.",
+    time: "15 minutos",
+  },
+  {
+    num: "PASO 04",
+    title: "Recibes tu plata",
+    desc: "Transferencia inmediata. Te vas con tu carro y liquidez.",
+    time: "3 minutos",
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Prendautos · Préstamos sobre vehículos en Colombia"
+  description="Préstamos sobre vehículos sin dejar el carro. Desembolso en 30 minutos. Sin Datacrédito. Bogotá y Medellín."
+>
+  <!-- HERO -->
+  <section class="px-8 py-20 max-w-[1280px] mx-auto">
+    <div class="grid lg:grid-cols-[1.1fr_1fr] gap-20 items-center">
+      <div>
+        <div
+          class="inline-flex gap-2 items-center bg-primary/10 text-primary font-mono text-xs px-3.5 py-1.5 rounded-full tracking-wider uppercase mb-6 font-medium"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          Préstamos sobre vehículos · desde 2007
+        </div>
+
+        <h1
+          class="text-5xl sm:text-6xl lg:text-[72px] font-extrabold tracking-[-0.045em] leading-[1.02] mb-6"
+        >
+          Tu carro
+          <em class="not-italic text-primary relative inline-block">
+            te respalda
+            <span
+              aria-hidden="true"
+              class="absolute left-0 right-0 bottom-1 h-3.5 bg-accent/25 -z-10 rounded"
+            ></span>
+          </em>
+          . Sin dejarlo de usar.
+        </h1>
+
+        <p class="text-xl text-gray leading-[1.55] max-w-[520px] mb-9">
+          Convierte tu vehículo en liquidez inmediata sin entregarlo. Préstamos
+          legales, transparentes y aprobados en 30 minutos — para los que el
+          banco les cierra la puerta.
+        </p>
+
+        <div class="flex gap-3 flex-wrap mb-10">
+          <Button href="/simulador" variant="primary" size="lg">
+            Calcular mi préstamo →
+          </Button>
+          <Button href="/sin-dejar-el-carro" variant="outline" size="lg">
+            ¿Cómo funciona?
+          </Button>
+        </div>
+
+        <div class="flex gap-8 pt-8 border-t border-border flex-wrap">
+          {
+            trust.map((t) => (
+              <div>
+                <div class="text-[28px] font-extrabold text-primary tracking-tight">
+                  {t.num}
+                </div>
+                <div class="text-[13px] text-gray">{t.lbl}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <HeroSimulator client:load />
+    </div>
+  </section>
+
+  <!-- EMPATHY -->
+  <section class="bg-dark text-white px-8 py-24">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="mb-[60px]">
+        <div
+          class="font-mono text-[13px] text-accent font-medium tracking-widest uppercase mb-4"
+        >
+          Sabemos por qué llegaste aquí
+        </div>
+        <h2
+          class="text-5xl font-extrabold tracking-[-0.035em] leading-[1.1] mb-5"
+        >
+          Tu situación no es<br />un caso atípico.
+        </h2>
+        <p class="text-lg text-white/60 leading-relaxed max-w-[640px]">
+          Llevamos 18 años atendiendo personas reales con necesidades reales.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {
+          empathy.map((e) => (
+            <div class="bg-white/[0.04] border border-white/[0.08] rounded-3xl p-9">
+              <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#E8714A"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  set:html={e.icon}
+                />
+              </div>
+              <h3 class="text-2xl font-bold tracking-tight mb-3">{e.title}</h3>
+              <p class="text-base text-white/70 leading-relaxed mb-6">
+                {e.body}
+              </p>
+              <div class="pt-5 border-t border-white/[0.08] font-mono text-xs text-white/55">
+                {e.tag}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="px-8 py-24">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="mb-[60px]">
+        <div
+          class="font-mono text-[13px] text-accent font-medium tracking-widest uppercase mb-4"
+        >
+          Préstamos sobre vehículos
+        </div>
+        <h2
+          class="text-5xl font-extrabold tracking-[-0.035em] leading-[1.1] mb-5"
+        >
+          Una sola garantía.<br />Múltiples soluciones.
+        </h2>
+        <p class="text-lg text-gray leading-relaxed max-w-[640px]">
+          Tu vehículo abre la puerta a varios productos diseñados para
+          diferentes momentos.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-[1.4fr_1fr_1fr] gap-4">
+        <a
+          href="/sin-dejar-el-carro"
+          class="lg:row-span-2 bg-primary text-white rounded-3xl p-9 transition-all hover:-translate-y-1 relative overflow-hidden flex flex-col"
+        >
+          <div
+            class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center mb-5"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M3 12h1l1.5-5h13L20 12h1m-5 0a2 2 0 100 4 2 2 0 000-4zm-10 0a2 2 0 100 4 2 2 0 000-4z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold tracking-tight mb-2">
+            Préstamo sin custodia
+          </h3>
+          <p class="text-[15px] text-white/75 leading-relaxed flex-1">
+            Recibe tu plata sin entregar el vehículo. Sigues manejándolo y
+            trabajando con él. Nuestro servicio estrella.
+          </p>
+          <span
+            class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent"
+          >
+            Ver detalles →
+          </span>
+        </a>
+
+        <a
+          href="/compra-cartera"
+          class="bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary"
+        >
+          <div
+            class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0B6B5C"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+              <path d="M2 10h20"></path>
+            </svg>
+          </div>
+          <h3 class="text-[22px] font-bold tracking-tight mb-2">
+            Compra de cartera
+          </h3>
+          <p class="text-[15px] text-gray leading-relaxed">
+            Te compramos tu crédito vehicular activo y te bajamos la tasa.
+          </p>
+          <span class="mt-5 inline-block text-sm font-semibold text-primary">
+            Cambia tu deuda →
+          </span>
+        </a>
+
+        <a
+          href="/prestamos-taxis"
+          class="bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary"
+        >
+          <div
+            class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0B6B5C"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+          </div>
+          <h3 class="text-[22px] font-bold tracking-tight mb-2">
+            Préstamos para taxis
+          </h3>
+          <p class="text-[15px] text-gray leading-relaxed">
+            Crédito específico para vehículos productivos.
+          </p>
+          <span class="mt-5 inline-block text-sm font-semibold text-primary">
+            Ver requisitos →
+          </span>
+        </a>
+
+        <a
+          href="/prestamos-motos"
+          class="lg:col-span-2 bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary"
+        >
+          <div
+            class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0B6B5C"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="12" r="3"></circle>
+              <path d="M9 12h6"></path>
+            </svg>
+          </div>
+          <h3 class="text-[22px] font-bold tracking-tight mb-2">
+            Préstamos sobre motos
+          </h3>
+          <p class="text-[15px] text-gray leading-relaxed">
+            Tu moto también te respalda. Mismo proceso, montos adaptados.
+          </p>
+          <span class="mt-5 inline-block text-sm font-semibold text-primary">
+            Calcular →
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="bg-light px-8 py-24">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="mb-[60px]">
+        <div
+          class="font-mono text-[13px] text-accent font-medium tracking-widest uppercase mb-4"
+        >
+          Así funciona
+        </div>
+        <h2
+          class="text-5xl font-extrabold tracking-[-0.035em] leading-[1.1] mb-5"
+        >
+          De tu carro a tu cuenta.<br />En 30 minutos.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {
+          steps.map((s) => (
+            <div class="bg-white rounded-3xl p-8 border border-border">
+              <div class="font-mono text-[13px] text-accent font-semibold mb-6 tracking-widest">
+                {s.num}
+              </div>
+              <div class="text-[19px] font-bold tracking-tight mb-2">
+                {s.title}
+              </div>
+              <p class="text-sm text-gray leading-relaxed">{s.desc}</p>
+              <span class="mt-5 font-mono text-xs text-primary bg-primary/10 px-2.5 py-1 rounded-full inline-block font-semibold">
+                {s.time}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <FinalCta />
 </Layout>

@@ -1,0 +1,35 @@
+---
+interface Item {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<div
+  class="bg-light px-8 py-4 border-b border-border font-mono text-xs tracking-wider uppercase"
+>
+  <div
+    class="max-w-[1280px] mx-auto flex gap-2 items-center text-gray flex-wrap"
+  >
+    {
+      items.map((item, i) => (
+        <>
+          {item.href ? (
+            <a href={item.href} class="text-primary hover:underline">
+              {item.label}
+            </a>
+          ) : (
+            <span>{item.label}</span>
+          )}
+          {i < items.length - 1 && <span class="text-gray-light">/</span>}
+        </>
+      ))
+    }
+  </div>
+</div>

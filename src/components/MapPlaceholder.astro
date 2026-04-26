@@ -1,0 +1,35 @@
+---
+interface Props {
+  address: string;
+  city: string;
+}
+
+const { address, city } = Astro.props;
+---
+
+<div
+  class="relative aspect-square rounded-3xl overflow-hidden flex flex-col items-center justify-center gap-4 text-center"
+  style="background: linear-gradient(135deg, #E8E4DC 0%, #D4CDB8 100%);"
+>
+  <div
+    aria-hidden="true"
+    class="absolute inset-0"
+    style="background-image: linear-gradient(rgba(11,107,92,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(11,107,92,0.08) 1px, transparent 1px); background-size: 32px 32px;"
+  >
+  </div>
+  <div
+    class="relative z-10"
+    style="filter: drop-shadow(0 8px 16px rgba(232,113,74,0.4));"
+  >
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="#E8714A">
+      <path
+        d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"
+      ></path>
+    </svg>
+  </div>
+  <p
+    class="relative z-10 text-sm font-semibold text-dark text-center leading-tight px-4"
+  >
+    {address}<br />{city}
+  </p>
+</div>

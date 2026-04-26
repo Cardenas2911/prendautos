@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import Callout from "../components/Callout.astro";
+import FinalCta from "../components/FinalCta.astro";
+---
+
+<Layout
+  title="Préstamos para taxis y vehículos productivos | Prendautos"
+  description="Crédito específico para taxis, plataformas (Uber, DiDi) y vehículos de carga. Sigues trabajando mientras pagas."
+  activeNav="prestamos"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Préstamos", href: "/prestamos-vehiculos" },
+      { label: "Taxis" },
+    ]}
+  />
+
+  <PageHero
+    title="Préstamos para taxis. "
+    emphasis="Tu trabajo"
+    titleSuffix=" no se detiene."
+    lede="Crédito específico para vehículos productivos. Mismo proceso, montos adaptados al uso comercial — y sigues trabajando todos los días."
+  />
+
+  <ContentProse>
+    <h2>Para vehículos de trabajo</h2>
+    <p>
+      Si tu carro es tu fuente de ingresos, no puedes darte el lujo de dejarlo
+      en custodia. Por eso diseñamos un préstamo específico para taxis,
+      camionetas de servicio público y vehículos de carga.
+    </p>
+
+    <h2>Vehículos elegibles</h2>
+    <ul>
+      <li>Taxis amarillos con tarjeta de operación vigente</li>
+      <li>Vehículos de plataforma (Uber, DiDi, InDriver)</li>
+      <li>Camionetas de carga (NPR, NHR, similares)</li>
+      <li>Vans de transporte escolar y empresarial</li>
+    </ul>
+
+    <h2>Documentación adicional</h2>
+    <p>Adicional a los requisitos generales, necesitamos:</p>
+    <ul>
+      <li>Tarjeta de operación vigente (taxis)</li>
+      <li>Certificado de empresa transportadora</li>
+      <li>Última revisión técnico-mecánica al día</li>
+    </ul>
+
+    <Callout>
+      <p>
+        <strong>Importante:</strong> el vehículo nunca queda inmovilizado.
+        Sigues trabajando todos los días mientras pagas tu crédito.
+      </p>
+    </Callout>
+  </ContentProse>
+
+  <FinalCta />
+</Layout>

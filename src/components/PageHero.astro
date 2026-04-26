@@ -1,0 +1,49 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+  title: string;
+  emphasis?: string;
+  titleSuffix?: string;
+  lede?: string;
+  showCtas?: boolean;
+}
+
+const { title, emphasis, titleSuffix, lede, showCtas = true } = Astro.props;
+---
+
+<section class="px-8 pt-20 pb-[60px] bg-base border-b border-border">
+  <div class="max-w-[1080px] mx-auto">
+    <h1
+      class="text-4xl sm:text-5xl lg:text-[64px] font-extrabold tracking-[-0.04em] leading-[1.05] text-dark mb-6"
+    >
+      {title}
+      {emphasis && <em class="not-italic text-primary">{emphasis}</em>}
+      {titleSuffix}
+    </h1>
+    {
+      lede && (
+        <p class="text-[22px] text-gray leading-[1.5] max-w-[720px] mb-8">
+          {lede}
+        </p>
+      )
+    }
+
+    {
+      showCtas && (
+        <div class="flex gap-3 flex-wrap">
+          <Button href="/simulador" variant="primary" size="lg">
+            Calcular mi préstamo →
+          </Button>
+          <Button
+            href="https://wa.me/573113547995"
+            variant="outline"
+            size="lg"
+          >
+            Hablar por WhatsApp
+          </Button>
+        </div>
+      )
+    }
+  </div>
+</section>

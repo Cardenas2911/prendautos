@@ -1,0 +1,96 @@
+---
+interface Props {
+  maxWidth?: number;
+  variant?: "default" | "legal";
+}
+
+const { maxWidth = 760, variant = "default" } = Astro.props;
+---
+
+<section class="px-8 py-20">
+  <div
+    class:list={["prose-prendautos mx-auto", variant === "legal" && "legal"]}
+    style={`max-width:${maxWidth}px;`}
+  >
+    <slot />
+  </div>
+</section>
+
+<style is:global>
+  .prose-prendautos h2 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 48px 0 16px;
+    color: var(--color-dark);
+  }
+  .prose-prendautos h2:first-child {
+    margin-top: 0;
+  }
+  .prose-prendautos h3 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 32px 0 12px;
+    color: var(--color-dark);
+  }
+  .prose-prendautos p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+  }
+  .prose-prendautos ul,
+  .prose-prendautos ol {
+    margin: 16px 0 16px 24px;
+  }
+  .prose-prendautos li {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+    color: var(--color-dark);
+  }
+  .prose-prendautos strong {
+    color: var(--color-dark);
+    font-weight: 700;
+  }
+  .prose-prendautos a {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  .prose-prendautos a:hover {
+    text-decoration: underline;
+  }
+
+  .prose-prendautos table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 16px;
+  }
+  .prose-prendautos thead {
+    background: var(--color-light);
+    text-align: left;
+  }
+  .prose-prendautos th,
+  .prose-prendautos td {
+    padding: 14px;
+    border: 1px solid var(--color-border);
+  }
+  .prose-prendautos th {
+    font-weight: 600;
+  }
+  .prose-prendautos th:last-child {
+    color: var(--color-primary);
+  }
+
+  /* Legal pages variant */
+  .prose-prendautos.legal h2 {
+    font-size: 22px;
+    margin-top: 32px;
+  }
+  .prose-prendautos.legal p,
+  .prose-prendautos.legal li {
+    font-size: 16px;
+  }
+</style>

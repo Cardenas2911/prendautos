@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import ClusterGrid from "../components/ClusterGrid.astro";
+import FinalCta from "../components/FinalCta.astro";
+
+const cards = [
+  {
+    href: "/pignoracion-que-es",
+    tag: "Concepto",
+    title: "¿Qué es pignorar un carro?",
+    description:
+      "Definición legal, alcance y diferencias con otros tipos de crédito.",
+    arrow: "Leer guía →",
+  },
+  {
+    href: "/pignoracion-requisitos",
+    tag: "Trámite",
+    title: "Requisitos para pignorar",
+    description: "Documentos, condiciones del vehículo y pasos exactos.",
+    arrow: "Ver requisitos →",
+  },
+  {
+    href: "/pignoracion-tasas",
+    tag: "Costos",
+    title: "Tasas y costos",
+    description:
+      "Cómo se calcula la tasa, qué incluye y qué buscar para no caer en abusos.",
+    arrow: "Ver tasas →",
+  },
+  {
+    href: "/pignoracion-levantar",
+    tag: "Final",
+    title: "Cómo levantar la prenda",
+    description:
+      "Qué hacer al pagar el crédito para liberar tu vehículo del gravamen.",
+    arrow: "Ver proceso →",
+  },
+];
+---
+
+<Layout
+  title="Pignoración de vehículos en Colombia | Prendautos"
+  description="Guía completa de pignoración: qué es, cómo funciona, requisitos, tasas y cómo levantar la prenda. Ley 1676 de 2013."
+  activeNav="pignoracion"
+>
+  <Breadcrumb
+    items={[{ label: "Inicio", href: "/" }, { label: "Pignoración" }]}
+  />
+
+  <PageHero
+    title="Pignoración de vehículos. "
+    emphasis="Todo lo que"
+    titleSuffix=" necesitas saber."
+    lede="Antes de firmar, entiende. Esta es nuestra guía completa para que sepas exactamente qué es la pignoración, cómo funciona legalmente y qué pasa en cada escenario."
+  />
+
+  <ContentProse>
+    <h2>¿Por qué es importante entender la pignoración?</h2>
+    <p>
+      Pignorar un vehículo es un acto legal serio: estás constituyendo una
+      garantía real sobre uno de tus activos más valiosos. Mereces entender cada
+      paso antes de firmar — sin letras pequeñas, sin sorpresas.
+    </p>
+
+    <ClusterGrid cards={cards} />
+
+    <h2>Resumen ejecutivo</h2>
+    <ul>
+      <li>
+        <strong>Pignorar</strong> = inscribir tu vehículo como garantía de un préstamo.
+      </li>
+      <li>
+        <strong>El vehículo sigue siendo tuyo</strong> durante todo el plazo del
+        crédito.
+      </li>
+      <li><strong>Se firma en notaría</strong> y se registra en el RUNT.</li>
+      <li>
+        <strong>Al pagar</strong> se levanta la prenda y queda 100% libre nuevamente.
+      </li>
+    </ul>
+  </ContentProse>
+
+  <FinalCta />
+</Layout>

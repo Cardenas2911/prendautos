@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+---
+
+<Layout
+  title="Términos y condiciones | Prendautos"
+  description="Términos y condiciones de uso del sitio y de los servicios de préstamo prendario sobre vehículos de Prendautos."
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Términos y condiciones" },
+    ]}
+  />
+
+  <PageHero
+    title="Términos y "
+    emphasis="condiciones"
+    titleSuffix="."
+    showCtas={false}
+  />
+
+  <ContentProse maxWidth={820} variant="legal">
+    <h2>1. Aceptación</h2>
+    <p>
+      El uso de este sitio implica la aceptación de estos términos. Si no estás
+      de acuerdo, abstente de usarlo.
+    </p>
+
+    <h2>2. Naturaleza del servicio</h2>
+    <p>
+      Prendautos ofrece préstamos sobre vehículos respaldados por contrato de
+      prenda sin tenencia, conforme a la <strong>Ley 1676 de 2013</strong> y el
+      Código Civil.
+    </p>
+
+    <h2>3. Tasas y costos</h2>
+    <p>
+      Las tasas de interés se calculan dentro de los límites legales
+      establecidos mensualmente por la Superintendencia Financiera. Los costos
+      asociados (notariales, peritaje, estudio) se informan al cliente antes de
+      la firma.
+    </p>
+
+    <h2>4. Obligaciones del cliente</h2>
+    <ul>
+      <li>Entregar información veraz</li>
+      <li>Mantener el vehículo en buen estado durante el plazo del préstamo</li>
+      <li>Cumplir con los pagos pactados</li>
+      <li>
+        No vender ni gravar el vehículo sin autorización mientras exista la
+        prenda
+      </li>
+    </ul>
+
+    <h2>5. Mora y proceso de cobranza</h2>
+    <p>
+      El incumplimiento de pagos genera intereses moratorios dentro del límite
+      legal y puede activar el proceso de ejecución de la garantía conforme a la
+      ley.
+    </p>
+
+    <h2>6. Modificaciones</h2>
+    <p>
+      Estos términos pueden actualizarse. La versión vigente siempre estará
+      publicada en este sitio.
+    </p>
+
+    <p style="margin-top:40px;color:var(--color-gray);font-size:14px;">
+      Última actualización: enero de 2026
+    </p>
+  </ContentProse>
+</Layout>

@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import Callout from "../components/Callout.astro";
+import ClusterGrid from "../components/ClusterGrid.astro";
+import FinalCta from "../components/FinalCta.astro";
+
+const productos = [
+  {
+    href: "/sin-dejar-el-carro",
+    tag: "Más popular",
+    title: "Préstamo sin custodia",
+    description: "Recibes la plata, conservas el carro. Servicio estrella.",
+    arrow: "Ver detalles →",
+  },
+  {
+    href: "/compra-cartera",
+    tag: "Refinancia",
+    title: "Compra de cartera vehicular",
+    description: "Te compramos tu crédito actual y te bajamos la tasa.",
+    arrow: "Cómo funciona →",
+  },
+  {
+    href: "/prestamos-taxis",
+    tag: "Productivos",
+    title: "Préstamos para taxis",
+    description: "Crédito para vehículos de trabajo y servicio público.",
+    arrow: "Ver requisitos →",
+  },
+  {
+    href: "/prestamos-motos",
+    tag: "Motos",
+    title: "Préstamos sobre motos",
+    description: "Tu moto también te respalda. Mismo proceso.",
+    arrow: "Calcular →",
+  },
+];
+
+const pignoracion = [
+  {
+    href: "/pignoracion-que-es",
+    tag: "Concepto",
+    title: "¿Qué es pignorar un carro?",
+    description: "Definición, alcance legal y diferencias con otros créditos.",
+    arrow: "Leer →",
+  },
+  {
+    href: "/pignoracion-tasas",
+    tag: "Costos",
+    title: "Cómo funcionan las tasas",
+    description:
+      "Qué incluyen, cómo se calculan y por qué importa la transparencia.",
+    arrow: "Leer →",
+  },
+];
+---
+
+<Layout
+  title="Préstamos sobre vehículos en Colombia | Prendautos"
+  description="Préstamos sobre vehículos sin dejar el carro. Hasta el 50% del valor. Desembolso en 30 minutos. Bogotá, Medellín y online."
+  activeNav="prestamos"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Préstamos sobre vehículos" },
+    ]}
+  />
+
+  <PageHero
+    title="Préstamos sobre vehículos. "
+    emphasis="Tu carro"
+    titleSuffix=" es tu mejor garantía."
+    lede="Convertimos tu vehículo en liquidez inmediata sin que dejes de usarlo. Procesos legales, pignoración notariada y aprobación en minutos — no en semanas."
+  />
+
+  <ContentProse>
+    <h2>¿Qué es un préstamo sobre vehículo?</h2>
+    <p>
+      Es un crédito en el que tu carro o moto funciona como <strong
+        >garantía prendaria</strong
+      >. A cambio, recibes hasta el 50% del valor comercial del vehículo en
+      efectivo o por transferencia. Lo único que cambia es que se inscribe una
+      prenda en notaría — tu propiedad sigue siendo tuya.
+    </p>
+    <Callout>
+      <p>
+        <strong>Lo importante:</strong> en Prendautos no decomisamos vehículos.
+        Sigues manejándolo durante todo el plazo del préstamo.
+      </p>
+    </Callout>
+
+    <h2>Productos de préstamo</h2>
+    <ClusterGrid cards={productos} />
+
+    <h2>¿Por qué Prendautos?</h2>
+    <ul>
+      <li>
+        <strong>30 minutos de desembolso.</strong> Desde la simulación hasta la
+        transferencia.
+      </li>
+      <li>
+        <strong>Sin Datacrédito.</strong> No te juzgamos por tu historial; nos
+        basamos en tu garantía.
+      </li>
+      <li>
+        <strong>Conservas tu vehículo.</strong> No hay custodia ni decomiso
+        durante el préstamo.
+      </li>
+      <li>
+        <strong>Contrato notariado.</strong> 100% legal, transparente y registrado
+        ante el RUNT.
+      </li>
+      <li>
+        <strong>18+ años de experiencia.</strong> Empresa establecida en Medellín
+        desde 2007.
+      </li>
+    </ul>
+
+    <h2>Requisitos generales</h2>
+    <ul>
+      <li>Vehículo a tu nombre (carro o moto particular o productivo)</li>
+      <li>Cédula vigente</li>
+      <li>Tarjeta de propiedad y SOAT al día</li>
+      <li>Certificado de tradición sin restricciones</li>
+      <li>Peritaje del vehículo (lo gestionamos contigo)</li>
+    </ul>
+
+    <h2>Aprende sobre pignoración</h2>
+    <p>
+      Si nunca has pignorado un vehículo, te recomendamos leer nuestra guía
+      antes de aplicar:
+    </p>
+    <ClusterGrid cards={pignoracion} />
+  </ContentProse>
+
+  <FinalCta />
+</Layout>

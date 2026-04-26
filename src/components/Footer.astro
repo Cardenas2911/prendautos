@@ -1,0 +1,100 @@
+---
+import BrandLogo from "./BrandLogo.astro";
+
+const cols = [
+  {
+    title: "Préstamos",
+    links: [
+      { href: "/prestamos-vehiculos", label: "Préstamos sobre vehículos" },
+      { href: "/sin-dejar-el-carro", label: "Sin dejar el carro" },
+      { href: "/compra-cartera", label: "Compra de cartera" },
+      { href: "/prestamos-taxis", label: "Para taxis" },
+      { href: "/prestamos-motos", label: "Sobre motos" },
+    ],
+  },
+  {
+    title: "Pignoración",
+    links: [
+      { href: "/pignoracion", label: "Guía completa" },
+      { href: "/pignoracion-que-es", label: "¿Qué es?" },
+      { href: "/pignoracion-requisitos", label: "Requisitos" },
+      { href: "/pignoracion-tasas", label: "Tasas de interés" },
+      { href: "/pignoracion-levantar", label: "Levantar la prenda" },
+    ],
+  },
+  {
+    title: "Empresa",
+    links: [
+      { href: "/nosotros", label: "Nosotros" },
+      { href: "/oficinas", label: "Oficinas" },
+      { href: "/oficinas-bogota", label: "Bogotá" },
+      { href: "/oficinas-medellin", label: "Medellín" },
+      { href: "/preguntas-frecuentes", label: "Preguntas frecuentes" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { href: "/politicas-de-privacidad", label: "Privacidad" },
+      { href: "/terminos-y-condiciones", label: "Términos" },
+      {
+        href: "/atencion-consumidor-financiero",
+        label: "Atención al consumidor",
+      },
+    ],
+  },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer
+  class="bg-dark text-white/70 px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 lg:pt-20 pb-8 lg:pb-10"
+>
+  <div class="max-w-[1280px] mx-auto">
+    <div
+      class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-[1.5fr_repeat(4,1fr)] gap-x-6 gap-y-10 lg:gap-12 mb-12 lg:mb-[60px]"
+    >
+      <div class="col-span-2 md:col-span-4 lg:col-span-1">
+        <BrandLogo variant="white" />
+        <p
+          class="text-sm text-white/50 leading-relaxed mt-4 max-w-[320px] lg:max-w-[280px]"
+        >
+          Préstamos sobre vehículos en Colombia. Tu garantía, nuestra agilidad.
+          Desde 2007.
+        </p>
+      </div>
+
+      {
+        cols.map((col) => (
+          <div>
+            <h5 class="font-mono text-[11px] sm:text-xs text-accent font-semibold tracking-widest uppercase mb-3 sm:mb-4">
+              {col.title}
+            </h5>
+            <ul class="flex flex-col gap-2 sm:gap-2.5 list-none">
+              {col.links.map((l) => (
+                <li>
+                  <a
+                    href={l.href}
+                    class="text-[13px] sm:text-sm text-white/65 hover:text-white transition-colors"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="border-t border-white/10 pt-6 lg:pt-8 flex flex-col sm:flex-row justify-between gap-3 sm:gap-6 text-[12px] sm:text-[13px] text-white/40 font-mono"
+    >
+      <span>© {year} Prendautos · NIT XXX.XXX.XXX-X</span>
+      <span class="sm:text-right">
+        Vigilados · Superintendencia Financiera de Colombia
+      </span>
+    </div>
+  </div>
+</footer>

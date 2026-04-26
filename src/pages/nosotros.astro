@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import FinalCta from "../components/FinalCta.astro";
+
+const stats = [
+  { value: "2007", label: "Año de fundación" },
+  { value: "18+", label: "Años en el mercado" },
+  { value: "2", label: "Oficinas físicas" },
+  { value: "30 min", label: "Promedio de desembolso" },
+];
+---
+
+<Layout
+  title="Nosotros · 18 años de experiencia | Prendautos"
+  description="Prendautos: empresa colombiana de préstamos sobre vehículos desde 2007. Transparencia, agilidad, respeto y legalidad."
+  activeNav="nosotros"
+>
+  <Breadcrumb
+    items={[{ label: "Inicio", href: "/" }, { label: "Nosotros" }]}
+  />
+
+  <PageHero
+    title="Préstamos hechos "
+    emphasis="por personas"
+    titleSuffix=", para personas."
+    lede="Llevamos 18 años haciendo lo mismo: préstamos sobre vehículos, transparentes y rápidos, para colombianos a quienes el sistema bancario les cierra la puerta."
+    showCtas={false}
+  />
+
+  <ContentProse maxWidth={1000}>
+    <h2>Nuestra historia</h2>
+    <p>
+      Prendautos nació en Medellín en 2007. Empezamos atendiendo conductores de
+      taxi que necesitaban capital de trabajo y no calificaban para créditos
+      bancarios. Hoy atendemos a miles de colombianos al año — taxistas,
+      conductores de plataforma, comerciantes, emprendedores, padres de familia.
+    </p>
+    <p>
+      El principio que nos guía no ha cambiado: <strong
+        >tu vehículo es una garantía suficiente</strong
+      >. No necesitamos juzgarte por tu historial crediticio si tienes un activo
+      real que respalda el préstamo. Esa convicción nos llevó a crear nuestro
+      modelo "sin custodia" — porque entendemos que para muchos clientes, el
+      carro es la herramienta de trabajo.
+    </p>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 my-10 not-prose">
+      {
+        stats.map((s) => (
+          <div class="bg-light rounded-2xl p-6 text-center">
+            <strong class="block text-[32px] font-extrabold text-primary tracking-[-0.03em] mb-1">
+              {s.value}
+            </strong>
+            <span class="text-[13px] text-gray font-mono">{s.label}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2>Nuestros valores</h2>
+    <ul>
+      <li>
+        <strong>Transparencia.</strong> Cero letra pequeña. Te mostramos el costo
+        total antes de firmar.
+      </li>
+      <li>
+        <strong>Agilidad.</strong> Tu tiempo vale. Aprobaciones reales en minutos,
+        no en semanas.
+      </li>
+      <li>
+        <strong>Respeto.</strong> No te juzgamos por tu historial. Te tratamos como
+        adulto.
+      </li>
+      <li>
+        <strong>Legalidad.</strong> Todo notariado, registrado y dentro de los topes
+        de usura.
+      </li>
+    </ul>
+
+    <h2>Cómo trabajamos</h2>
+    <p>
+      Operamos con licencia comercial bajo la regulación colombiana. Nuestras
+      tasas están dentro de los topes establecidos mensualmente por la
+      Superintendencia Financiera. Cada préstamo se firma en notaría y se
+      registra ante el RUNT. Nuestros clientes tienen acceso a un canal directo
+      de atención al consumidor financiero.
+    </p>
+  </ContentProse>
+
+  <FinalCta />
+</Layout>

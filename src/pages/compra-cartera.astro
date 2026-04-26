@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import FinalCta from "../components/FinalCta.astro";
+---
+
+<Layout
+  title="Compra de cartera vehicular | Prendautos"
+  description="Te compramos tu crédito vehicular activo y te bajamos la tasa. Refinanciación con condiciones más sanas y desembolso ágil."
+  activeNav="prestamos"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Préstamos", href: "/prestamos-vehiculos" },
+      { label: "Compra de cartera" },
+    ]}
+  />
+
+  <PageHero
+    title="Compra de cartera. "
+    emphasis="Cambia"
+    titleSuffix=" tu deuda por una mejor."
+    lede="¿Tienes un crédito vehicular con tasas altas? Te lo compramos y te damos condiciones más sanas. Una sola cuota, una tasa más baja, menos estrés."
+  />
+
+  <ContentProse>
+    <h2>¿Qué es la compra de cartera?</h2>
+    <p>
+      Es un proceso en el que Prendautos paga tu crédito vehicular actual con
+      otra entidad y abre uno nuevo contigo en mejores condiciones. Útil cuando
+      estás en un crédito con tasa muy alta, plazos rígidos o cuotas
+      inmanejables.
+    </p>
+
+    <h2>Cuándo te conviene</h2>
+    <ul>
+      <li>Tu tasa actual está por encima del 2% mensual</li>
+      <li>Las cuotas se te están haciendo difíciles</li>
+      <li>Quieres consolidar varias deudas vehiculares en una sola</li>
+      <li>Buscas extender el plazo para alivio de flujo de caja</li>
+    </ul>
+
+    <h2>Beneficios</h2>
+    <ul>
+      <li>
+        <strong>Tasa más baja</strong> que la mayoría de financieras del mercado
+      </li>
+      <li><strong>Una sola cuota</strong> con plazos personalizables</li>
+      <li>
+        <strong>Liquidez extra:</strong> si el valor del vehículo lo permite,
+        puedes recibir dinero adicional
+      </li>
+      <li>Proceso 100% legal y notariado</li>
+    </ul>
+
+    <h2>Documentos que necesitamos</h2>
+    <ul>
+      <li>Estado de cuenta de tu crédito actual</li>
+      <li>Tarjeta de propiedad del vehículo</li>
+      <li>Cédula vigente</li>
+      <li>Certificado de tradición</li>
+    </ul>
+  </ContentProse>
+
+  <FinalCta />
+</Layout>

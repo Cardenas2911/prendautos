@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+---
+
+<Layout
+  title="Atención al consumidor financiero | Prendautos"
+  description="Canales de atención al consumidor financiero, trámite de PQRS y derechos según la Ley 1328 de 2009."
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Atención al consumidor financiero" },
+    ]}
+  />
+
+  <PageHero
+    title="Atención al "
+    emphasis="consumidor"
+    titleSuffix=" financiero."
+    showCtas={false}
+  />
+
+  <ContentProse maxWidth={820} variant="legal">
+    <h2>Defensor del consumidor financiero</h2>
+    <p>
+      Como entidad que ofrece servicios crediticios, Prendautos cuenta con
+      canales de atención al consumidor conforme a la <strong
+        >Ley 1328 de 2009</strong
+      >.
+    </p>
+
+    <h2>Canales de atención</h2>
+    <ul>
+      <li><strong>Correo:</strong> consumidor@prendautos.co</li>
+      <li><strong>WhatsApp:</strong> +57 311 354 7995</li>
+      <li>
+        <strong>Presencial:</strong> oficinas Bogotá y Medellín en horario de atención
+      </li>
+    </ul>
+
+    <h2>Trámite de PQRS</h2>
+    <p>
+      Toda petición, queja, reclamo o sugerencia se responde en un plazo máximo
+      de 15 días hábiles. Si la respuesta no satisface, puedes acudir a la
+      Superintendencia Financiera de Colombia.
+    </p>
+
+    <h2>Derechos del consumidor financiero</h2>
+    <ul>
+      <li>Recibir información clara, cierta y oportuna</li>
+      <li>Recibir productos y servicios de calidad</li>
+      <li>Tener libertad de elección</li>
+      <li>Recibir educación financiera</li>
+      <li>Presentar PQRS y obtener respuesta</li>
+    </ul>
+
+    <p style="margin-top:40px;color:var(--color-gray);font-size:14px;">
+      Última actualización: enero de 2026
+    </p>
+  </ContentProse>
+</Layout>

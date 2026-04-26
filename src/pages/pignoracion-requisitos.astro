@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import FinalCta from "../components/FinalCta.astro";
+---
+
+<Layout
+  title="Requisitos para pignorar tu vehículo | Prendautos"
+  description="Documentos personales y del vehículo, condiciones y proceso paso a paso para pignorar carro o moto en Colombia."
+  activeNav="pignoracion"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Pignoración", href: "/pignoracion" },
+      { label: "Requisitos" },
+    ]}
+  />
+
+  <PageHero
+    title="Requisitos para "
+    emphasis="pignorar"
+    titleSuffix=" tu vehículo."
+    lede="Lista completa de documentos, condiciones y pasos. Si tienes todo a la mano, el proceso toma 30 minutos."
+  />
+
+  <ContentProse>
+    <h2>Documentos personales</h2>
+    <ul>
+      <li>
+        <strong>Cédula de ciudadanía vigente</strong> (o cédula de extranjería con
+        visa válida)
+      </li>
+      <li>
+        <strong>Comprobante de ingresos</strong> (extractos bancarios, certificado
+        laboral, declaración de renta o recibos de plataforma — Uber, DiDi, etc.)
+      </li>
+      <li><strong>Referencia personal y familiar</strong></li>
+    </ul>
+
+    <h2>Documentos del vehículo</h2>
+    <ul>
+      <li><strong>Tarjeta de propiedad</strong> a tu nombre</li>
+      <li><strong>SOAT vigente</strong></li>
+      <li>
+        <strong>Revisión técnico-mecánica al día</strong> (si aplica por antigüedad)
+      </li>
+      <li>
+        <strong>Certificado de tradición</strong> emitido en los últimos 30 días,
+        sin gravámenes ni limitaciones
+      </li>
+      <li><strong>Peritaje técnico</strong> (lo programamos contigo)</li>
+    </ul>
+
+    <h2>Condiciones del vehículo</h2>
+    <ul>
+      <li>
+        Antigüedad máxima: <strong>15 años</strong> (carros) / <strong
+          >8 años</strong
+        > (motos)
+      </li>
+      <li>Estado mecánico funcional</li>
+      <li>Sin reportes de hurto, fraude o impedimentos legales</li>
+      <li>Sin embargos o medidas judiciales activas</li>
+      <li>Pico y placa, multas y comparendos al día</li>
+    </ul>
+
+    <h2>Lo que NO necesitas</h2>
+    <ul>
+      <li>❌ <strong>Datacrédito limpio.</strong> No lo consultamos.</li>
+      <li>❌ <strong>Codeudor.</strong> Tu vehículo es la garantía.</li>
+      <li>
+        ❌ <strong>Tener cuenta en banco específico.</strong> Aceptamos cualquier
+        banco para el desembolso.
+      </li>
+    </ul>
+
+    <h2>Proceso paso a paso</h2>
+    <ol>
+      <li>Diligencia el formulario de simulación (2 min)</li>
+      <li>Recibes una pre-aprobación con un asesor humano</li>
+      <li>Llevas tu vehículo al peritaje (15 min)</li>
+      <li>Firmas el pagaré y la pignoración en notaría</li>
+      <li>Recibes el desembolso por transferencia o efectivo</li>
+    </ol>
+  </ContentProse>
+
+  <FinalCta />
+</Layout>

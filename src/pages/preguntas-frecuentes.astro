@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import FAQAccordion from "../components/FAQAccordion.tsx";
+import FinalCta from "../components/FinalCta.astro";
+import { faqItems } from "../data/faq";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout
+  title="Preguntas frecuentes | Prendautos"
+  description="Respuestas a las preguntas más comunes sobre préstamos sobre vehículos, pignoración, tasas y proceso de Prendautos."
+>
+  <script
+    is:inline
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify(faqSchema)}
+  />
+
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Preguntas frecuentes" },
+    ]}
+  />
+
+  <PageHero
+    title="Preguntas "
+    emphasis="frecuentes"
+    titleSuffix="."
+    lede="Lo que la gente más nos pregunta. Si no encuentras tu respuesta, escríbenos por WhatsApp."
+    showCtas={false}
+  />
+
+  <section class="px-8 pt-[60px] pb-24">
+    <div class="max-w-[880px] mx-auto">
+      <FAQAccordion items={faqItems} client:load />
+    </div>
+  </section>
+
+  <FinalCta />
+</Layout>

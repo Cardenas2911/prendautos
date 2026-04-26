@@ -1,0 +1,78 @@
+---
+import BrandLogo from "./BrandLogo.astro";
+import Button from "./Button.astro";
+import MobileMenu from "./MobileMenu.tsx";
+
+interface Props {
+  active?:
+    | "prestamos"
+    | "sin-dejar-el-carro"
+    | "pignoracion"
+    | "simulador"
+    | "nosotros"
+    | "oficinas"
+    | null;
+}
+
+const { active = null } = Astro.props;
+
+const links = [
+  { href: "/prestamos-vehiculos", label: "Préstamos", key: "prestamos" },
+  {
+    href: "/sin-dejar-el-carro",
+    label: "Sin dejar el carro",
+    key: "sin-dejar-el-carro",
+  },
+  { href: "/pignoracion", label: "Pignoración", key: "pignoracion" },
+  { href: "/simulador", label: "Simulador", key: "simulador" },
+  { href: "/nosotros", label: "Nosotros", key: "nosotros" },
+  { href: "/oficinas", label: "Oficinas", key: "oficinas" },
+];
+---
+
+<nav
+  class="sticky top-0 z-50 bg-base/85 backdrop-blur-xl border-b border-border"
+>
+  <div
+    class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-3 lg:py-4 flex items-center justify-between gap-4"
+  >
+    <BrandLogo />
+
+    <div
+      class="hidden lg:flex gap-7 text-sm font-medium text-dark items-center"
+    >
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              "relative transition-colors hover:text-primary py-[22px]",
+              active === link.key && "text-primary",
+            ]}
+          >
+            {link.label}
+            {active === link.key && (
+              <span class="absolute -bottom-px left-0 right-0 h-0.5 bg-primary" />
+            )}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-2.5">
+      <div class="hidden lg:flex items-center gap-2.5">
+        <Button href="/preguntas-frecuentes" variant="ghost">Ayuda</Button>
+        <Button href="/simulador" variant="primary">Solicitar préstamo</Button>
+      </div>
+
+      <a
+        href="/simulador"
+        class="lg:hidden inline-flex items-center gap-1.5 bg-primary text-white font-semibold text-[13px] sm:text-sm px-3 sm:px-4 py-2.5 rounded-[10px] hover:bg-primary-dark transition-colors whitespace-nowrap"
+      >
+        Solicitar
+      </a>
+
+      <MobileMenu links={links} active={active} client:load />
+    </div>
+  </div>
+</nav>

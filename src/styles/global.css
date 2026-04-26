@@ -1,1 +1,82 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #0B6B5C;
+  --color-primary-light: #1A8F7D;
+  --color-primary-dark: #084D43;
+
+  --color-accent: #E8714A;
+  --color-accent-light: #F09070;
+  --color-accent-dark: #d05f3a;
+
+  --color-dark: #141821;
+  --color-gray: #6B7280;
+  --color-gray-light: #9CA3AF;
+
+  --color-light: #F5F3EF;
+  --color-base: #FAFAF8;
+  --color-border: #E8E4DC;
+
+  --color-whatsapp: #25D366;
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-card: 16px;
+  --radius-card-lg: 24px;
+  --radius-pill: 100px;
+
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.06);
+  --shadow-hero: 0 30px 80px rgba(11, 107, 92, 0.12), 0 0 0 1px rgba(11, 107, 92, 0.06);
+  --shadow-wa: 0 12px 32px rgba(37, 211, 102, 0.35);
+}
+
+@layer base {
+  html,
+  body {
+    @apply font-sans bg-base text-dark antialiased;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  a {
+    @apply no-underline text-inherit;
+  }
+}
+
+@utility container-site {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* Range slider thumb (used by HeroSimulator + Simulator) */
+.hero-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(11, 107, 92, 0.25);
+}
+.hero-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(11, 107, 92, 0.25);
+}
+.hero-range::-webkit-slider-runnable-track {
+  background: transparent;
+}
+.hero-range::-moz-range-track {
+  background: transparent;
+}
