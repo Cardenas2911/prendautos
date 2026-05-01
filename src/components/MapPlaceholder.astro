@@ -7,15 +7,19 @@ interface Props {
 const { address, city } = Astro.props;
 ---
 
-<div class="relative aspect-square rounded-3xl overflow-hidden shadow-sm border border-[#E8E4DC] bg-[#E8E4DC]">
-  <!-- Iframe responsivo de Google Maps usando params estándar -->
+<div class="relative aspect-square rounded-3xl overflow-hidden shadow-sm border border-[#E8E4DC] bg-[#E8E4DC] group cursor-pointer">
+  <!-- Iframe específico proveído por el usuario -->
   <iframe 
-    src={`https://maps.google.com/maps?q=${encodeURIComponent(`${address}, ${city}`)}&t=&z=16&ie=UTF8&iwloc=B&output=embed`}
-    class="absolute inset-0 w-full h-full border-0"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5136665872446!2d-75.56128678912152!3d6.195751893766019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e468290911e30af%3A0xbccd2418d204c3c5!2sCra.%2025%20%231a%20sur-155%20Of.%201241%2C%20El%20Poblado%2C%20Medell%C3%ADn%2C%20El%20Poblado%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1777678786195!5m2!1ses-419!2sco"
+    class="absolute inset-0 w-full h-full border-0 pointer-events-none"
     allowfullscreen=""
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
   ></iframe>
-  <!-- Overlay decorativo sutil interior -->
-  <div class="absolute inset-0 pointer-events-none rounded-3xl ring-1 ring-inset ring-black/5"></div>
+  
+  <!-- Overlay decorativo -->
+  <div class="absolute inset-0 rounded-3xl ring-1 ring-inset ring-black/5 pointer-events-none group-hover:bg-black/5 transition-colors"></div>
+
+  <!-- Capa invisible para intercepción de clic que redirige al enlace exacto -->
+  <a href="https://maps.app.goo.gl/J7J2PzVRSZNGKq3XA" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-20" aria-label="Abrir mapa en Google Maps"></a>
 </div>
