@@ -1,108 +1,109 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
-import HeroSimulator from "../components/HeroSimulator.tsx";
+import LoanLeadForm from "../components/LoanLeadForm.tsx";
 import FinalCta from "../components/FinalCta.astro";
 
 const trust = [
-  { num: "30 min", lbl: "Desembolso" },
-  { num: "18+ años", lbl: "En el mercado" },
-  { num: "100%", lbl: "Legal y notariado" },
-  { num: "Sin", lbl: "Datacrédito" },
+  { num: "30 min", lbl: "Para el desembolso" },
+  { num: "Desde 2007", lbl: "Atendiendo en Medellín" },
+  { num: "Sin", lbl: "Centrales de riesgo" },
+  { num: "24/7", lbl: "Parqueadero vigilado" },
 ];
 
 const empathy = [
   {
-    title: "Lo necesito para ya",
+    title: "Lo necesito hoy",
     body:
-      "Una urgencia médica, una oportunidad de negocio, un imprevisto. La vida no espera 15 días — y nosotros tampoco.",
-    tag: "Pre-aprobación en 2 min · Desembolso en 30 min",
+      "Una urgencia, una oportunidad, un imprevisto. Te avaluamos el vehículo por WhatsApp y desembolsamos en 30 minutos en nuestra oficina de El Poblado.",
+    tag: "Avalúo inmediato · Desembolso en 30 min",
     icon: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
   },
   {
-    title: "Mi carro es mi trabajo",
+    title: "No quiero que revisen mi historial",
     body:
-      "Manejas para una app, tienes tu propio negocio, el vehículo es parte de tu día a día. Por eso nunca queda en custodia.",
-    tag: "Pignoración legal · Tú conservas el vehículo",
-    icon: '<path d="M3 12h1l1.5-5h13L20 12h1m-5 0a2 2 0 100 4 2 2 0 000-4zm-10 0a2 2 0 100 4 2 2 0 000-4z"/>',
+      "Aprobamos sobre el valor del vehículo, no sobre tu pasado crediticio. No consultamos centrales de riesgo.",
+    tag: "Sin Datacrédito · Sin reportes",
+    icon: '<path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/>',
   },
   {
-    title: "Quiero entender qué firmo",
+    title: "Quiero saber dónde queda mi carro",
     body:
-      "Antes de prestar tu vehículo como garantía, mereces saber cómo funciona la pignoración y qué pasa en cada escenario.",
-    tag: "Costos claros · Notariado · Cero letra pequeña",
-    icon: '<path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/>',
+      "Tu vehículo permanece en parqueadero cubierto y vigilado las 24 horas. Tomamos fotos al recibirlo para que se devuelva en el mismo estado.",
+    tag: "Vigilancia 24/7 · Registro fotográfico",
+    icon: '<path d="M3 12h1l1.5-5h13L20 12h1m-5 0a2 2 0 100 4 2 2 0 000-4zm-10 0a2 2 0 100 4 2 2 0 000-4z"/>',
   },
 ];
 
 const steps = [
   {
     num: "PASO 01",
-    title: "Simula online",
-    desc: "Cuéntanos sobre tu vehículo y monto. Pre-aprobación al instante.",
-    time: "2 minutos",
+    title: "Solicitud y avalúo",
+    desc: "Nos escribes por WhatsApp o llenas el formulario con la placa, marca, versión e identificación del propietario. Te damos el valor a prestar al instante.",
+    time: "5 min",
   },
   {
     num: "PASO 02",
-    title: "Validación express",
-    desc: "Verificamos cédula, RUNT y peritaje. Sin Datacrédito.",
-    time: "10 minutos",
+    title: "Visita la oficina",
+    desc: "Te presentas en El Poblado (Edificio Platinum). Diligenciamos compraventa con pacto de retroventa, traspaso y poder.",
+    time: "15 min",
   },
   {
     num: "PASO 03",
-    title: "Firma notariada",
-    desc: "Firmas el contrato y la prenda en notaría. Todo legal.",
-    time: "15 minutos",
+    title: "Autenticación",
+    desc: "Autenticas los documentos en notaría (~$50.000 a tu cargo). Es el único costo externo del trámite.",
+    time: "10 min",
   },
   {
     num: "PASO 04",
-    title: "Recibes tu plata",
-    desc: "Transferencia inmediata. Te vas con tu carro y liquidez.",
-    time: "3 minutos",
+    title: "Desembolso en efectivo",
+    desc: "Regresas con los documentos autenticados y recibes el dinero en efectivo de inmediato.",
+    time: "5 min",
   },
 ];
 ---
 
 <Layout
-  title="Prendautos · Préstamos sobre vehículos en Colombia"
-  description="Préstamos sobre vehículos sin dejar el carro. Desembolso en 30 minutos. Sin Datacrédito. Bogotá y Medellín."
+  title="Préstamos sobre Vehículos en Medellín | Empeño de Carros y Motos | Prendautos"
+  description="¿Necesitas dinero rápido? En Prendautos Medellín te prestamos sobre tu carro o moto en 30 minutos. Sin centrales de riesgo, vehículos vigilados 24/7. ¡Visítanos!"
+  activeNav="inicio"
 >
   <!-- HERO -->
   <section class="px-4 sm:px-8 py-10 md:py-20 max-w-[1280px] mx-auto">
-    <div class="grid lg:grid-cols-[1.1fr_1fr] gap-20 items-center">
+    <div class="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-center">
       <div>
         <div
           class="inline-flex gap-2 items-center bg-primary/10 text-primary font-mono text-xs px-3.5 py-1.5 rounded-full tracking-wider uppercase mb-6 font-medium"
         >
           <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-          Préstamos sobre vehículos · desde 2007
+          Préstamos sobre vehículos en Medellín · desde 2007
         </div>
 
         <h1
           class="text-[40px] md:text-6xl lg:text-[72px] font-extrabold tracking-[-0.045em] leading-[1.05] mb-6"
         >
-          Tu carro
+          Dinero
           <em class="not-italic text-primary relative inline-block">
-            te respalda
+            en 30 minutos
             <span
               aria-hidden="true"
               class="absolute left-0 right-0 bottom-1 h-3.5 bg-accent/25 -z-10 rounded"
             ></span>
           </em>
-          . Sin dejarlo de usar.
+          dejando tu vehículo como garantía.
         </h1>
 
-        <p class="text-xl text-gray leading-[1.55] max-w-[520px] mb-9">
-          Convierte tu vehículo en liquidez inmediata sin entregarlo. Préstamos
-          legales, transparentes y aprobados en 30 minutos — para los que el
-          banco les cierra la puerta.
+        <p class="text-xl text-gray leading-[1.55] max-w-[540px] mb-9">
+          Préstamos sobre carros y motos en Medellín. Sin centrales de riesgo,
+          parqueadero vigilado 24 horas y trámite directo en nuestra oficina de
+          El Poblado.
         </p>
 
         <div class="flex gap-3 flex-wrap mb-10">
-          <Button href={`${import.meta.env.BASE_URL}/simulador`} variant="primary" size="lg">
-            Calcular mi préstamo →
+          <Button href="https://wa.me/573113547995" variant="primary" size="lg">
+            Solicitar por WhatsApp →
           </Button>
-          <Button href={`${import.meta.env.BASE_URL}/sin-dejar-el-carro`} variant="outline" size="lg">
+          <Button href={`${import.meta.env.BASE_URL}/prestamos-vehiculos-medellin`} variant="outline" size="lg">
             ¿Cómo funciona?
           </Button>
         </div>
@@ -111,7 +112,7 @@ const steps = [
           {
             trust.map((t) => (
               <div>
-                <div class="text-[28px] font-extrabold text-primary tracking-tight">
+                <div class="text-[24px] sm:text-[28px] font-extrabold text-primary tracking-tight">
                   {t.num}
                 </div>
                 <div class="text-[13px] text-gray">{t.lbl}</div>
@@ -121,7 +122,7 @@ const steps = [
         </div>
       </div>
 
-      <HeroSimulator client:load />
+      <LoanLeadForm vehicleType="carro" variant="hero" client:load />
     </div>
   </section>
 
@@ -132,15 +133,16 @@ const steps = [
         <div
           class="font-mono text-[13px] text-accent font-medium tracking-widest uppercase mb-4"
         >
-          Sabemos por qué llegaste aquí
+          Por qué elegir Prendautos Medellín
         </div>
         <h2
           class="text-4xl md:text-5xl font-extrabold tracking-[-0.035em] leading-[1.1] mb-5"
         >
-          Tu situación no es<br />un caso atípico.
+          Rapidez y confianza<br />en un solo lugar.
         </h2>
         <p class="text-lg text-white/60 leading-relaxed max-w-[640px]">
-          Llevamos 18 años atendiendo personas reales con necesidades reales.
+          Llevamos casi dos décadas atendiendo personas que necesitan liquidez
+          sin las complicaciones de la banca tradicional.
         </p>
       </div>
 
@@ -182,23 +184,23 @@ const steps = [
         <div
           class="font-mono text-[13px] text-accent font-medium tracking-widest uppercase mb-4"
         >
-          Préstamos sobre vehículos
+          Nuestros servicios
         </div>
         <h2
           class="text-4xl md:text-5xl font-extrabold tracking-[-0.035em] leading-[1.1] mb-5"
         >
-          Una sola garantía.<br />Múltiples soluciones.
+          Tres formas de obtener<br />dinero rápido.
         </h2>
         <p class="text-lg text-gray leading-relaxed max-w-[640px]">
-          Tu vehículo abre la puerta a varios productos diseñados para
-          diferentes momentos.
+          Préstamos presenciales en Medellín y cambio de cupo de tarjeta de
+          crédito 100% online a todo Colombia.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-[1.4fr_1fr_1fr] gap-4">
+      <div class="grid lg:grid-cols-3 gap-4">
         <a
-          href={`${import.meta.env.BASE_URL}/sin-dejar-el-carro`}
-          class="lg:row-span-2 bg-primary text-white rounded-3xl p-9 transition-all hover:-translate-y-1 relative overflow-hidden flex flex-col"
+          href={`${import.meta.env.BASE_URL}/prestamos-vehiculos-medellin`}
+          class="bg-primary text-white rounded-3xl p-9 transition-all hover:-translate-y-1 relative overflow-hidden flex flex-col"
         >
           <div
             class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center mb-5"
@@ -213,17 +215,15 @@ const steps = [
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path
-                d="M3 12h1l1.5-5h13L20 12h1m-5 0a2 2 0 100 4 2 2 0 000-4zm-10 0a2 2 0 100 4 2 2 0 000-4z"
-              ></path>
+              <path d="M3 12h1l1.5-5h13L20 12h1m-5 0a2 2 0 100 4 2 2 0 000-4zm-10 0a2 2 0 100 4 2 2 0 000-4z"></path>
             </svg>
           </div>
-          <h3 class="text-3xl font-bold tracking-tight mb-2">
-            Préstamo sin custodia
+          <h3 class="text-2xl font-bold tracking-tight mb-2">
+            Préstamos sobre vehículos
           </h3>
-          <p class="text-[15px] text-white/75 leading-relaxed flex-1">
-            Recibe tu plata sin entregar el vehículo. Sigues manejándolo y
-            trabajando con él. Nuestro servicio estrella.
+          <p class="text-[15px] text-white/80 leading-relaxed flex-1">
+            Empeñamos tu carro y te prestamos efectivo el mismo día. Trámite
+            presencial en nuestra oficina de El Poblado.
           </p>
           <span
             class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent"
@@ -233,72 +233,8 @@ const steps = [
         </a>
 
         <a
-          href={`${import.meta.env.BASE_URL}/compra-cartera`}
-          class="bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary"
-        >
-          <div
-            class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5"
-          >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#0B6B5C"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-              <path d="M2 10h20"></path>
-            </svg>
-          </div>
-          <h3 class="text-[22px] font-bold tracking-tight mb-2">
-            Compra de cartera
-          </h3>
-          <p class="text-[15px] text-gray leading-relaxed">
-            Te compramos tu crédito vehicular activo y te bajamos la tasa.
-          </p>
-          <span class="mt-5 inline-block text-sm font-semibold text-primary">
-            Cambia tu deuda →
-          </span>
-        </a>
-
-        <a
-          href={`${import.meta.env.BASE_URL}/prestamos-taxis`}
-          class="bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary"
-        >
-          <div
-            class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5"
-          >
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#0B6B5C"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M12 6v6l4 2"></path>
-            </svg>
-          </div>
-          <h3 class="text-[22px] font-bold tracking-tight mb-2">
-            Préstamos para taxis
-          </h3>
-          <p class="text-[15px] text-gray leading-relaxed">
-            Crédito específico para vehículos productivos.
-          </p>
-          <span class="mt-5 inline-block text-sm font-semibold text-primary">
-            Ver requisitos →
-          </span>
-        </a>
-
-        <a
-          href={`${import.meta.env.BASE_URL}/prestamos-motos`}
-          class="lg:col-span-2 bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary"
+          href={`${import.meta.env.BASE_URL}/prestamos-motos-medellin`}
+          class="bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary flex flex-col"
         >
           <div
             class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5"
@@ -318,14 +254,51 @@ const steps = [
               <path d="M9 12h6"></path>
             </svg>
           </div>
-          <h3 class="text-[22px] font-bold tracking-tight mb-2">
-            Préstamos sobre motos
+          <h3 class="text-2xl font-bold tracking-tight mb-2">
+            Empeñar una moto
           </h3>
-          <p class="text-[15px] text-gray leading-relaxed">
-            Tu moto también te respalda. Mismo proceso, montos adaptados.
+          <p class="text-[15px] text-gray leading-relaxed flex-1">
+            Préstamo sobre tu moto sin importar el modelo. Recibimos motos de
+            todos los años en parqueadero cubierto y vigilado.
           </p>
           <span class="mt-5 inline-block text-sm font-semibold text-primary">
-            Calcular →
+            Cómo empeñar →
+          </span>
+        </a>
+
+        <a
+          href={`${import.meta.env.BASE_URL}/avances-tarjetas-de-credito`}
+          class="bg-white border border-border rounded-3xl p-9 transition-all hover:-translate-y-1 hover:border-primary flex flex-col"
+        >
+          <div
+            class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0B6B5C"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+              <path d="M2 10h20"></path>
+            </svg>
+          </div>
+          <div class="inline-flex w-fit gap-1.5 items-center bg-accent/10 text-accent font-mono text-[10px] px-2 py-1 rounded-full tracking-wider uppercase mb-3 font-semibold">
+            100% online · Toda Colombia
+          </div>
+          <h3 class="text-2xl font-bold tracking-tight mb-2">
+            Cupo de tarjeta a efectivo
+          </h3>
+          <p class="text-[15px] text-gray leading-relaxed flex-1">
+            Cambia el cupo de tu tarjeta de crédito por efectivo en tu cuenta
+            bancaria en una hora. 100% en línea, desde cualquier ciudad.
+          </p>
+          <span class="mt-5 inline-block text-sm font-semibold text-primary">
+            Ver cómo funciona →
           </span>
         </a>
       </div>
@@ -344,7 +317,7 @@ const steps = [
         <h2
           class="text-4xl md:text-5xl font-extrabold tracking-[-0.035em] leading-[1.1] mb-5"
         >
-          De tu carro a tu cuenta.<br />En 30 minutos.
+          De tu vehículo a tu bolsillo.<br />En 30 minutos.
         </h2>
       </div>
 

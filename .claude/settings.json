@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -p \"observaciones \\(1\\).docx\" word/document.xml)",
+      "Read(//tmp/**)",
+      "Read(//c/Users/User/AppData/Local/Temp/**)",
+      "Bash(npx astro *)",
+      "Bash(echo \"PID=$!\")",
+      "Bash(curl -s -I \"http://localhost:4323/prendautos/oficinas\")",
+      "Bash(curl -s -I \"http://localhost:4323/prendautos/simulador\")",
+      "Bash(curl -s -I \"http://localhost:4323/prendautos/prestamos-vehiculos\")",
+      "Bash(curl -s -I \"http://localhost:4323/prendautos/pignoracion\")",
+      "Bash(kill 151)",
+      "Bash(pkill -f \"astro dev\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\User\\AppData\\Local\\Temp"
+    ]
+  }
+}

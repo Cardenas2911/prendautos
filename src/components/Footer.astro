@@ -3,34 +3,19 @@ import BrandLogo from "./BrandLogo.astro";
 
 const cols = [
   {
-    title: "Préstamos",
+    title: "Servicios",
     links: [
-      { href: "/avances-tarjetas-de-credito", label: "Avances de Tarjetas" },
-      { href: "/prestamos-vehiculos", label: "Préstamos sobre vehículos" },
-      { href: "/sin-dejar-el-carro", label: "Sin dejar el carro" },
-      { href: "/compra-cartera", label: "Compra de cartera" },
-      { href: "/prestamos-taxis", label: "Para taxis" },
-      { href: "/prestamos-motos", label: "Sobre motos" },
-    ],
-  },
-  {
-    title: "Pignoración",
-    links: [
-      { href: "/pignoracion", label: "Guía completa" },
-      { href: "/pignoracion-que-es", label: "¿Qué es?" },
-      { href: "/pignoracion-requisitos", label: "Requisitos" },
-      { href: "/pignoracion-tasas", label: "Tasas de interés" },
-      { href: "/pignoracion-levantar", label: "Levantar la prenda" },
+      { href: "/prestamos-vehiculos-medellin", label: "Préstamos sobre vehículos" },
+      { href: "/prestamos-motos-medellin", label: "Empeñar una moto" },
+      { href: "/avances-tarjetas-de-credito", label: "Cupo a efectivo (online)" },
     ],
   },
   {
     title: "Empresa",
     links: [
       { href: "/nosotros", label: "Nosotros" },
-      { href: "/oficinas", label: "Oficinas" },
-      { href: "/oficinas-bogota", label: "Bogotá" },
-      { href: "/oficinas-medellin", label: "Medellín" },
       { href: "/preguntas-frecuentes", label: "Preguntas frecuentes" },
+      { href: "/contacto", label: "Contacto" },
     ],
   },
   {
@@ -54,15 +39,20 @@ const year = new Date().getFullYear();
 >
   <div class="max-w-[1280px] mx-auto">
     <div
-      class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-[1.5fr_repeat(4,1fr)] gap-x-6 gap-y-10 lg:gap-12 mb-12 lg:mb-[60px]"
+      class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-[1.6fr_repeat(3,1fr)] gap-x-6 gap-y-10 lg:gap-12 mb-12 lg:mb-[60px]"
     >
       <div class="col-span-2 md:col-span-4 lg:col-span-1">
         <BrandLogo variant="white" />
         <p
-          class="text-sm text-white/50 leading-relaxed mt-4 max-w-[320px] lg:max-w-[280px]"
+          class="text-sm text-white/50 leading-relaxed mt-4 max-w-[320px] lg:max-w-[300px]"
         >
-          Préstamos sobre vehículos en Colombia. Tu garantía, nuestra agilidad.
-          Desde 2007.
+          Préstamos sobre vehículos en Medellín. Desembolso en 30 minutos. Desde 2007.
+        </p>
+        <p class="text-xs text-white/45 leading-relaxed mt-4 max-w-[300px]">
+          Carrera 25 # 1A sur 155, Of. 1241, Edificio Platinum, El Poblado, Medellín.
+        </p>
+        <p class="text-xs text-white/45 leading-relaxed mt-2 max-w-[300px]">
+          (604) 574 4341 · 311 354 7995 · 311 378 9211
         </p>
       </div>
 
@@ -76,7 +66,7 @@ const year = new Date().getFullYear();
               {col.links.map((l) => (
                 <li>
                   <a
-                    href={l.href}
+                    href={`${import.meta.env.BASE_URL}${l.href}`}
                     class="text-[13px] sm:text-sm text-white/65 hover:text-white transition-colors"
                   >
                     {l.label}
@@ -92,9 +82,9 @@ const year = new Date().getFullYear();
     <div
       class="border-t border-white/10 pt-6 lg:pt-8 flex flex-col sm:flex-row justify-between gap-3 sm:gap-6 text-[12px] sm:text-[13px] text-white/40 font-mono"
     >
-      <span>© {year} Prendautos · NIT XXX.XXX.XXX-X</span>
+      <span>© {year} Prendautos Medellín</span>
       <span class="sm:text-right">
-        Vigilados · Superintendencia Financiera de Colombia
+        Préstamos sobre vehículos · Carros · Motos · Cupo a efectivo
       </span>
     </div>
   </div>

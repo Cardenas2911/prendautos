@@ -1,0 +1,174 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import Callout from "../components/Callout.astro";
+import FinalCta from "../components/FinalCta.astro";
+import LoanLeadForm from "../components/LoanLeadForm.tsx";
+---
+
+<Layout
+  title="Empeñar una Moto en Medellín | Préstamos sobre Motos | Prendautos"
+  description="Empeña tu moto en Medellín y recibe efectivo en 30 minutos. Sin centrales de riesgo, recibimos motos de todos los años. Parqueadero cubierto y vigilado 24/7."
+  activeNav="motos"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Empeñar una moto" },
+    ]}
+  />
+
+  <PageHero
+    title="Empeñar una moto en Medellín. "
+    emphasis="Dinero por tu moto"
+    titleSuffix=" en 30 minutos."
+    lede="Te prestamos dinero dejando tu moto como garantía. Recibimos motos de todos los años, sin consultar centrales de riesgo y con parqueadero vigilado las 24 horas."
+  />
+
+  <section class="px-4 sm:px-8 py-12 lg:py-16 bg-light">
+    <div class="max-w-[1100px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-[-0.035em] leading-tight mb-4">
+          Solicita el avalúo de tu moto
+        </h2>
+        <p class="text-[17px] text-gray leading-relaxed mb-6">
+          El monto depende del modelo, año y estado de la moto. Déjanos los
+          datos y te respondemos por WhatsApp con el valor exacto a prestar.
+        </p>
+        <ul class="flex flex-col gap-3 text-[15px] text-dark/80">
+          <li class="flex gap-2.5"><span class="text-primary font-bold">·</span>Avalúo inmediato vía WhatsApp.</li>
+          <li class="flex gap-2.5"><span class="text-primary font-bold">·</span>Recibimos motos de cualquier cilindraje y modelo.</li>
+          <li class="flex gap-2.5"><span class="text-primary font-bold">·</span>Tu moto queda en parqueadero cubierto y vigilado 24/7.</li>
+          <li class="flex gap-2.5"><span class="text-primary font-bold">·</span>Desembolso del dinero en efectivo el mismo día.</li>
+        </ul>
+      </div>
+      <LoanLeadForm vehicleType="moto" variant="page" client:load />
+    </div>
+  </section>
+
+  <ContentProse>
+    <h2>¿Cómo funciona el proceso?</h2>
+    <ol>
+      <li>
+        <strong>Solicitud y avalúo.</strong> Contáctanos por WhatsApp o llena el
+        formulario con la placa, marca, versión y número de identificación del
+        propietario. Te damos el avalúo de inmediato.
+      </li>
+      <li>
+        <strong>Visita nuestra oficina.</strong> Una vez aprobado el valor, te
+        presentas en la Carrera 25 # 1A sur 155, Of. 1241, Edificio Platinum,
+        El Poblado. Diligenciamos los contratos de compraventa con pacto de
+        retroventa, traspaso y poder.
+      </li>
+      <li>
+        <strong>Autenticación notarial.</strong> El propietario autentica los
+        documentos en la notaría. El costo aproximado es de <strong
+          >$50.000</strong
+        > a cargo del cliente.
+      </li>
+      <li>
+        <strong>Desembolso en efectivo.</strong> Al regresar con los documentos
+        autenticados, recibes tu dinero en efectivo de inmediato.
+      </li>
+    </ol>
+
+    <Callout>
+      <p>
+        <strong>Importante:</strong> el servicio de préstamos sobre motos sólo
+        está disponible en la ciudad de Medellín. El tiempo total del trámite
+        es aproximadamente de 30 minutos.
+      </p>
+    </Callout>
+
+    <h2>Requisitos</h2>
+    <ul>
+      <li>
+        <strong>Presentación personal del propietario</strong> de la moto. Es
+        indispensable que se presente quien aparece como dueño en la matrícula.
+      </li>
+      <li>
+        La moto debe estar <strong>libre de prendas, pignoraciones</strong> o
+        cualquier restricción para la venta.
+      </li>
+      <li>
+        Documentos <strong>en original</strong>: cédula del propietario,
+        matrícula de la moto, SOAT y revisión técnico-mecánica.
+      </li>
+      <li>
+        Documentos a firmar y autenticar en notaría: contrato de compraventa
+        con pacto de retroventa, contrato de compraventa de vehículo, traspaso
+        y poder.
+      </li>
+    </ul>
+
+    <h2>Costos del préstamo sobre motos</h2>
+    <ul>
+      <li>
+        <strong>Costo del préstamo:</strong> 10% mensual sobre el valor prestado.
+      </li>
+      <li>
+        <strong>Parqueadero:</strong> $70.000 mensuales para motos (en parqueadero
+        cubierto y vigilado 24 horas).
+      </li>
+      <li>
+        <strong>Pago por adelantado:</strong> el día del desembolso se descuenta
+        el primer mes del costo del préstamo y el primer mes de parqueadero.
+      </li>
+      <li>
+        <strong>Vigencia:</strong> cada contrato tiene una vigencia de 30 días
+        calendario contados a partir del día del desembolso.
+      </li>
+      <li>
+        <strong>Cobros por mes completo:</strong> se cargan siempre por mes
+        completo, no se hacen cobros por días.
+      </li>
+      <li>
+        <strong>Solo en efectivo:</strong> tanto el desembolso como los pagos
+        se hacen únicamente en efectivo en nuestras instalaciones.
+      </li>
+    </ul>
+
+    <h2>Al vencimiento del contrato</h2>
+    <p>
+      El día del vencimiento tienes dos opciones: retirar la moto pagando el
+      capital prestado, o renovar el contrato por un mes adicional pagando el
+      costo del préstamo + el parqueadero.
+    </p>
+
+    <h2>Retiro de la moto</h2>
+    <p>
+      Para retirar tu moto debes informarnos con <strong
+        >1 día de anticipación</strong
+      > para poder traerla del parqueadero y tenerla lista cuando llegues.
+      Comunícate con nosotros:
+    </p>
+    <ul>
+      <li>(604) 574 4341</li>
+      <li>311 354 7995</li>
+      <li>311 378 9211</li>
+    </ul>
+
+    <h2>Cuidado de tu moto</h2>
+    <p>
+      Cuando recibimos la moto tomamos fotos por dentro y por fuera para que al
+      momento de la entrega se pueda comprobar que se devuelve en el mismo
+      estado. La moto queda en parqueadero cubierto y vigilado las 24 horas,
+      sin moverse de allí hasta que confirmes el retiro.
+    </p>
+
+    <h2>Para mensajeros, domiciliarios y motos de trabajo</h2>
+    <p>
+      Si tu moto es tu medio de trabajo entendemos que necesitas el desembolso
+      con la mayor agilidad posible. Por eso el trámite total no supera los 30
+      minutos en oficina. Recibimos motos de marcas como AKT, Bajaj, Honda,
+      Yamaha, Suzuki, KTM, Kawasaki, TVS, Royal Enfield, entre otras.
+    </p>
+  </ContentProse>
+
+  <FinalCta
+    title={"¿Listo para empeñar tu moto?\nEscríbenos ahora."}
+    subtitle="Te respondemos en minutos con el avalúo y el monto exacto a prestar."
+  />
+</Layout>

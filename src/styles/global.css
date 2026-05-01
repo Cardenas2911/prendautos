@@ -53,30 +53,3 @@
   padding-inline: 2rem;
 }
 
-/* Range slider thumb (used by HeroSimulator + Simulator) */
-.hero-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 22px;
-  height: 22px;
-  background: #fff;
-  border: 3px solid var(--color-primary);
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(11, 107, 92, 0.25);
-}
-.hero-range::-moz-range-thumb {
-  width: 22px;
-  height: 22px;
-  background: #fff;
-  border: 3px solid var(--color-primary);
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(11, 107, 92, 0.25);
-}
-.hero-range::-webkit-slider-runnable-track {
-  background: transparent;
-}
-.hero-range::-moz-range-track {
-  background: transparent;
-}

@@ -5,53 +5,63 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
-    question: "¿Cuánto puedo recibir por mi vehículo?",
+    question: "¿En qué ciudad opera Prendautos?",
     answer:
-      "Hasta el 50% del valor comercial según peritaje. El monto exacto depende del modelo, año y estado.",
-  },
-  {
-    question: "¿Tengo que dejar el carro en custodia?",
-    answer:
-      "No. En Prendautos conservas tu vehículo durante todo el plazo del préstamo. Lo manejas con normalidad.",
-  },
-  {
-    question: "¿Consultan Datacrédito?",
-    answer:
-      "No. No nos basamos en tu historial crediticio. La garantía es tu vehículo.",
+      "Los préstamos sobre vehículos (carros y motos) se realizan únicamente en Medellín, en nuestra oficina del Edificio Platinum en El Poblado. El servicio de cambio de cupo de tarjeta de crédito por efectivo es 100% online y está disponible en todo Colombia.",
   },
   {
     question: "¿Cuánto tarda el desembolso?",
     answer:
-      "30 minutos desde que llegas con todos los documentos completos. La pre-aprobación es inmediata.",
+      "Aproximadamente 30 minutos desde que llegas a la oficina con todos los documentos en regla. El avalúo previo se hace al instante por WhatsApp.",
   },
   {
-    question: "¿Qué pasa si me atraso en una cuota?",
+    question: "¿Consultan centrales de riesgo (Datacrédito)?",
     answer:
-      "Tenemos un proceso de cobranza con varias notificaciones antes de cualquier acción legal. Siempre intentamos renegociar primero.",
+      "No. La aprobación depende del valor del vehículo, no de tu historial crediticio.",
   },
   {
-    question: "¿Puedo pagar antes del plazo pactado?",
+    question: "¿Cuál es el costo del préstamo sobre vehículo?",
     answer:
-      "Sí, sin penalidades. Solo pagas intereses hasta el día del pago efectivo.",
+      "El costo es el 10% mensual sobre el valor prestado, más el costo del parqueadero ($70.000 mensuales para motos y $200.000 mensuales para carros). Ambos se cobran por mes completo y se descuentan por adelantado el día del desembolso.",
   },
   {
-    question: "¿Aceptan vehículos de servicio público?",
+    question: "¿Qué pasa al vencimiento del contrato?",
     answer:
-      "Sí. Aceptamos taxis amarillos, vehículos de plataforma y camionetas de carga.",
+      "Cada contrato tiene una vigencia de 30 días calendario. Al vencimiento puedes retirar el vehículo pagando el capital prestado, o renovar el contrato por un mes adicional pagando el costo del préstamo + el parqueadero.",
   },
   {
-    question: "¿La prenda afecta mi RUNT después de pagar?",
+    question: "¿El vehículo queda en su poder durante el préstamo?",
     answer:
-      "No. Una vez pagado, levantamos la prenda y tu vehículo queda completamente libre.",
+      "Sí. Mientras esté vigente el contrato, el vehículo permanece en uno de nuestros parqueaderos cubiertos y vigilados las 24 horas. Tomamos fotos al recibirlo para garantizar que se devuelve en el mismo estado.",
   },
   {
-    question: "¿En qué ciudades operan?",
+    question: "¿Qué documentos necesito?",
     answer:
-      "Tenemos oficinas en Bogotá y Medellín. También atendemos online a todo Colombia.",
+      "Cédula del propietario, tarjeta de propiedad (matrícula), SOAT y revisión técnico-mecánica, todos en original. Adicionalmente firmas y autenticas en notaría: contrato de compraventa con pacto de retroventa, contrato de compraventa de vehículo, traspaso y poder. La autenticación tiene un costo aproximado de $50.000 a cargo del cliente.",
   },
   {
-    question: "¿Cuál es la tasa de interés?",
+    question: "¿Pueden hacer el desembolso por transferencia?",
     answer:
-      "Entre 1.5% y 2.4% mensual según monto y plazo. Siempre dentro de los topes legales de la Superfinanciera.",
+      "No. El desembolso del préstamo y los pagos posteriores se realizan únicamente en efectivo en nuestras instalaciones de El Poblado.",
+  },
+  {
+    question: "¿Cómo retiro mi vehículo?",
+    answer:
+      "Debes avisarnos con un día de anticipación para traer el vehículo del parqueadero y tenerlo listo cuando llegues. Debes presentar el contrato de compraventa con pacto de retroventa que recibiste el día de la firma. Llámanos al (604) 574 4341 o escríbenos al 311 354 7995 / 311 378 9211.",
+  },
+  {
+    question: "¿En cuánto tiempo recibo el efectivo del cambio de cupo de tarjeta?",
+    answer:
+      "Aproximadamente en 1 hora a tu cuenta bancaria. Es un proceso 100% online disponible desde cualquier ciudad de Colombia.",
+  },
+  {
+    question: "¿Cuánto cuesta el cambio de cupo de tarjeta de crédito por efectivo?",
+    answer:
+      "El 12% del monto retirado para tarjetas de franquicias, retail y bancos. El 18% para la tarjeta Crédito Fácil Codensa por la matriz de comisiones de su red procesadora.",
+  },
+  {
+    question: "¿Reciben vehículos con prendas o pignoraciones?",
+    answer:
+      "No. El vehículo debe estar libre de prendas, pignoraciones o cualquier restricción para la venta.",
   },
 ];

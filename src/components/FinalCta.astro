@@ -10,10 +10,10 @@ interface Props {
 }
 
 const {
-  title = "¿Necesitas plata hoy?\nTu carro la tiene.",
-  subtitle = "Calcula tu préstamo en 2 minutos y recibe pre-aprobación inmediata.",
-  ctaText = "Calcular mi préstamo →",
-  ctaHref = `${import.meta.env.BASE_URL}/simulador`,
+  title = "¿Necesitas plata hoy?\nTu vehículo la tiene.",
+  subtitle = "Escríbenos por WhatsApp con la placa, marca y versión de tu vehículo. Te damos el avalúo al instante.",
+  ctaText = "Solicitar por WhatsApp →",
+  ctaHref = "https://wa.me/573113547995",
   isAdvanceModal = false,
 } = Astro.props;
 
@@ -48,11 +48,11 @@ const lines = title.split("\n");
         {ctaText}
       </Button>
       <Button
-        href="https://wa.me/573113547995"
+        href="tel:+576045744341"
         variant="outline-light"
         size="lg"
       >
-        Hablar por WhatsApp
+        Llamar ahora
       </Button>
     </div>
   </div>

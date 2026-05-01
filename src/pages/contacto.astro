@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import MapPlaceholder from "../components/MapPlaceholder.astro";
+import FinalCta from "../components/FinalCta.astro";
+
+const phones = [
+  { label: "Fijo", number: "(604) 574 4341", tel: "+576045744341" },
+  { label: "Celular", number: "311 354 7995", tel: "+573113547995", whatsapp: true },
+  { label: "Celular", number: "311 378 9211", tel: "+573113789211", whatsapp: true },
+];
+---
+
+<Layout
+  title="Contacto · Prendautos Medellín | El Poblado"
+  description="Contáctanos en Medellín. Oficina en el Edificio Platinum, El Poblado. WhatsApp y teléfonos directos para tu solicitud de préstamo."
+  activeNav="contacto"
+>
+  <Breadcrumb
+    items={[{ label: "Inicio", href: "/" }, { label: "Contacto" }]}
+  />
+
+  <PageHero
+    title="Contacto. "
+    emphasis="Visítanos"
+    titleSuffix=" en El Poblado."
+    lede="Atención presencial en Medellín para préstamos sobre vehículos. Atención online a todo Colombia para cambio de cupo de tarjeta de crédito por efectivo."
+    showCtas={false}
+  />
+
+  <section class="px-4 sm:px-8 pt-12 lg:pt-16 pb-20 lg:pb-24">
+    <div
+      class="max-w-[1080px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-start"
+    >
+      <div>
+        <h2 class="text-[28px] md:text-[32px] font-extrabold tracking-[-0.03em] mb-4">
+          Oficina Prendautos Medellín
+        </h2>
+        <p class="text-[16px] text-gray leading-relaxed mb-6">
+          Carrera 25 # 1A sur 155, Of. 1241,<br />
+          Edificio Platinum, El Poblado, Medellín.
+        </p>
+
+        <h3 class="text-[15px] font-bold tracking-tight text-dark mb-3 mt-8">
+          Teléfonos
+        </h3>
+        <ul class="flex flex-col gap-2 mb-6">
+          {phones.map((p) => (
+            <li class="flex items-center gap-3 flex-wrap">
+              <span class="text-[12px] text-gray font-mono uppercase tracking-wider w-16">
+                {p.label}
+              </span>
+              <a
+                href={`tel:${p.tel}`}
+                class="text-[15px] font-semibold text-dark hover:text-primary transition-colors"
+              >
+                {p.number}
+              </a>
+              {p.whatsapp && (
+                <a
+                  href={`https://wa.me/${p.tel.replace("+", "")}`}
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#25D366] hover:underline"
+                >
+                  WhatsApp →
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <h3 class="text-[15px] font-bold tracking-tight text-dark mb-3 mt-8">
+          Horario de atención
+        </h3>
+        <p class="text-[15px] text-gray leading-relaxed">
+          Lunes a viernes: 8:00 am – 6:00 pm<br />
+          Sábados: 8:00 am – 1:00 pm<br />
+          Domingos y festivos: cerrado
+        </p>
+
+        <h3 class="text-[15px] font-bold tracking-tight text-dark mb-3 mt-8">
+          Servicios y cobertura
+        </h3>
+        <ul class="flex flex-col gap-2 text-[15px] text-gray leading-relaxed">
+          <li>
+            <strong class="text-dark">Préstamos sobre carros y motos:</strong>
+            atención presencial en Medellín.
+          </li>
+          <li>
+            <strong class="text-dark">Cambio de cupo de tarjeta a efectivo:</strong>
+            100% online, disponible en todo Colombia.
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <MapPlaceholder
+          address="Cra 25 # 1A sur 155 · Edificio Platinum"
+          city="El Poblado, Medellín"
+        />
+        <a
+          href="https://wa.me/573113547995"
+          target="_blank"
+          rel="noopener"
+          class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold text-sm px-[18px] py-3 rounded-[10px] hover:bg-primary-dark transition-colors"
+        >
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FinalCta
+    title={"¿Prefieres que te llamemos?"}
+    subtitle="Escríbenos por WhatsApp con tus datos y te contactamos en minutos."
+  />
+</Layout>

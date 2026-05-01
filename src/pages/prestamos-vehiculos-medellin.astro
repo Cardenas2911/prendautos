@@ -1,0 +1,197 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentProse from "../components/ContentProse.astro";
+import Callout from "../components/Callout.astro";
+import FinalCta from "../components/FinalCta.astro";
+import LoanLeadForm from "../components/LoanLeadForm.tsx";
+---
+
+<Layout
+  title="Préstamos sobre Vehículos en Medellín | Empeño de Carros | Prendautos"
+  description="Préstamo sobre tu carro en Medellín con desembolso en 30 minutos. Sin centrales de riesgo, parqueadero vigilado 24/7. Visítanos en El Poblado."
+  activeNav="prestamos"
+>
+  <Breadcrumb
+    items={[
+      { label: "Inicio", href: "/" },
+      { label: "Préstamos sobre vehículos" },
+    ]}
+  />
+
+  <PageHero
+    title="Préstamos sobre vehículos en Medellín. "
+    emphasis="Tu carro"
+    titleSuffix=" en efectivo en 30 minutos."
+    lede="Te prestamos dinero dejando tu carro como garantía. Trámite presencial en El Poblado, sin consultar centrales de riesgo y con parqueadero vigilado 24 horas."
+  />
+
+  <section class="px-4 sm:px-8 py-12 lg:py-16 bg-light">
+    <div class="max-w-[1100px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-[-0.035em] leading-tight mb-4">
+          Solicita el avalúo de tu vehículo
+        </h2>
+        <p class="text-[17px] text-gray leading-relaxed mb-6">
+          El monto depende del modelo, año y estado del vehículo. Déjanos los
+          datos y te respondemos por WhatsApp con el valor exacto a prestar.
+        </p>
+        <ul class="flex flex-col gap-3 text-[15px] text-dark/80">
+          <li class="flex gap-2.5"><span class="text-primary font-bold">·</span>Avalúo inmediato vía WhatsApp.</li>
+          <li class="flex gap-2.5"><span class="text-primary font-bold">·</span>Recibimos carros de cualquier modelo.</li>
+          <li class="flex gap-2.5"><span class="text-primary font-bold">·</span>Tu carro queda en parqueadero cubierto y vigilado 24/7.</li>
+          <li class="flex gap-2.5"><span class="text-primary font-bold">·</span>Desembolso del dinero en efectivo el mismo día.</li>
+        </ul>
+      </div>
+      <LoanLeadForm vehicleType="carro" variant="page" client:load />
+    </div>
+  </section>
+
+  <ContentProse>
+    <h2>¿Cómo funciona el proceso?</h2>
+    <ol>
+      <li>
+        <strong>Solicitud y avalúo.</strong> Contáctanos por WhatsApp o llena el
+        formulario con la placa, marca, versión y número de identificación del
+        propietario. Te damos el avalúo de inmediato.
+      </li>
+      <li>
+        <strong>Visita nuestra oficina.</strong> Una vez aprobado el valor, te
+        presentas en la Carrera 25 # 1A sur 155, Of. 1241, Edificio Platinum,
+        El Poblado. Diligenciamos los contratos de compraventa con pacto de
+        retroventa, traspaso y poder.
+      </li>
+      <li>
+        <strong>Autenticación notarial.</strong> El propietario autentica los
+        documentos en la notaría. El costo aproximado es de <strong
+          >$50.000</strong
+        > a cargo del cliente.
+      </li>
+      <li>
+        <strong>Desembolso en efectivo.</strong> Al regresar con los documentos
+        autenticados, recibes tu dinero en efectivo de inmediato.
+      </li>
+    </ol>
+
+    <Callout>
+      <p>
+        <strong>Importante:</strong> el servicio de préstamos sobre vehículos
+        sólo está disponible en la ciudad de Medellín. El tiempo total del
+        trámite es aproximadamente de 30 minutos.
+      </p>
+    </Callout>
+
+    <h2>Requisitos</h2>
+    <ul>
+      <li>
+        <strong>Presentación personal del propietario</strong> del vehículo. Es
+        indispensable que se presente quien aparece como dueño en la matrícula.
+      </li>
+      <li>
+        El vehículo debe estar <strong>libre de prendas, pignoraciones</strong> o
+        cualquier restricción para la venta.
+      </li>
+      <li>
+        Documentos <strong>en original</strong>: cédula del propietario,
+        matrícula del vehículo, SOAT y revisión técnico-mecánica.
+      </li>
+      <li>
+        Documentos a firmar y autenticar en notaría:
+        <ul>
+          <li>Contrato de compraventa con pacto de retroventa</li>
+          <li>Contrato de compraventa de vehículo</li>
+          <li>Traspaso</li>
+          <li>Poder</li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      Los documentos autenticados se devuelven al propietario en el momento de
+      retirar el vehículo y devolver el dinero.
+    </p>
+
+    <h2>Costos del préstamo</h2>
+    <ul>
+      <li>
+        <strong>Costo del préstamo:</strong> 10% mensual sobre el valor prestado.
+      </li>
+      <li>
+        <strong>Parqueadero:</strong> $200.000 mensuales para carros (en parqueadero
+        cubierto y vigilado 24 horas).
+      </li>
+      <li>
+        <strong>Pago por adelantado:</strong> el día del desembolso se descuenta
+        el primer mes del costo del préstamo y el primer mes de parqueadero.
+      </li>
+      <li>
+        <strong>Vigencia:</strong> cada contrato tiene una vigencia de 30 días
+        calendario contados a partir del día del desembolso.
+      </li>
+      <li>
+        <strong>Cobros por mes completo:</strong> el costo del préstamo y el
+        parqueadero se cargan siempre por mes completo, no se hacen cobros por
+        días.
+      </li>
+      <li>
+        <strong>Solo en efectivo:</strong> tanto el desembolso como los pagos
+        del propietario se hacen únicamente en efectivo en nuestras
+        instalaciones. No hacemos transferencias.
+      </li>
+    </ul>
+
+    <h2>Al vencimiento del contrato</h2>
+    <p>
+      El día del vencimiento tienes dos opciones:
+    </p>
+    <ul>
+      <li>
+        <strong>Retirar el vehículo</strong> pagando el valor del capital prestado.
+      </li>
+      <li>
+        <strong>Renovar el contrato</strong> por un mes adicional pagando el costo
+        del préstamo + el parqueadero.
+      </li>
+    </ul>
+
+    <h2>Retiro del vehículo</h2>
+    <p>
+      Para retirar tu vehículo debes informarnos con <strong
+        >1 día de anticipación</strong
+      > para que podamos traerlo del parqueadero y tenerlo listo en el momento
+      en que llegues. Para coordinar el retiro, comunícate con nosotros:
+    </p>
+    <ul>
+      <li>(604) 574 4341</li>
+      <li>311 354 7995</li>
+      <li>311 378 9211</li>
+    </ul>
+    <p>
+      Debes presentar el contrato de compraventa con pacto de retroventa que
+      recibiste el día de la firma del contrato.
+    </p>
+
+    <h2>Cuidado de tu vehículo</h2>
+    <p>
+      Cuando recibimos el vehículo tomamos fotos por dentro y por fuera para
+      que al momento de la entrega se pueda comprobar que se devuelve en el
+      mismo estado. El vehículo queda parqueado en uno de nuestros parqueaderos
+      cubiertos y vigilados las 24 horas, sin moverse de allí hasta que
+      confirmes que vas a hacer el retiro.
+    </p>
+
+    <h2>Ventajas competitivas de Prendautos Medellín</h2>
+    <ul>
+      <li>Desembolso del dinero en 30 minutos, directamente en nuestra oficina.</li>
+      <li>Empresa con trayectoria desde 2007.</li>
+      <li>Recibimos vehículos de cualquier modelo.</li>
+      <li>Parqueadero cubierto y vigilado las 24 horas.</li>
+      <li>No revisamos centrales de riesgo.</li>
+    </ul>
+  </ContentProse>
+
+  <FinalCta
+    title={"¿Listo para empeñar tu carro?\nEscríbenos ahora."}
+    subtitle="Te respondemos en minutos con el avalúo y el monto exacto a prestar."
+  />
+</Layout>

@@ -5,13 +5,13 @@ import MobileMenu from "./MobileMenu";
 
 interface Props {
   active?:
-    | "prestamos"
-    | "sin-dejar-el-carro"
-    | "pignoracion"
-    | "simulador"
+    | "inicio"
     | "nosotros"
-    | "oficinas"
-    | "avances-tarjetas"
+    | "prestamos"
+    | "motos"
+    | "tarjetas"
+    | "faq"
+    | "contacto"
     | null;
 }
 
@@ -19,17 +19,12 @@ const { active = null } = Astro.props;
 
 const links = [
   { href: `${import.meta.env.BASE_URL}/`, label: "Inicio", key: "inicio" },
-  { href: `${import.meta.env.BASE_URL}/prestamos-vehiculos`, label: "Préstamos", key: "prestamos" },
-  {
-    href: `${import.meta.env.BASE_URL}/sin-dejar-el-carro`,
-    label: "Sin dejar el carro",
-    key: "sin-dejar-el-carro",
-  },
-  { href: `${import.meta.env.BASE_URL}/pignoracion`, label: "Pignoración", key: "pignoracion" },
-  { href: `${import.meta.env.BASE_URL}/avances-tarjetas-de-credito`, label: "Tarjetas", key: "avances-tarjetas" },
-  { href: `${import.meta.env.BASE_URL}/simulador`, label: "Simulador", key: "simulador" },
   { href: `${import.meta.env.BASE_URL}/nosotros`, label: "Nosotros", key: "nosotros" },
-  { href: `${import.meta.env.BASE_URL}/oficinas`, label: "Oficinas", key: "oficinas" },
+  { href: `${import.meta.env.BASE_URL}/prestamos-vehiculos-medellin`, label: "Préstamos vehículos", key: "prestamos" },
+  { href: `${import.meta.env.BASE_URL}/prestamos-motos-medellin`, label: "Empeñar moto", key: "motos" },
+  { href: `${import.meta.env.BASE_URL}/avances-tarjetas-de-credito`, label: "Cupo a efectivo", key: "tarjetas" },
+  { href: `${import.meta.env.BASE_URL}/preguntas-frecuentes`, label: "Preguntas frecuentes", key: "faq" },
+  { href: `${import.meta.env.BASE_URL}/contacto`, label: "Contacto", key: "contacto" },
 ];
 ---
 
@@ -42,7 +37,7 @@ const links = [
     <BrandLogo />
 
     <div
-      class="hidden lg:flex gap-7 text-sm font-medium text-dark items-center"
+      class="hidden lg:flex gap-6 text-sm font-medium text-dark items-center"
     >
       {
         links.map((link) => (
@@ -64,12 +59,11 @@ const links = [
 
     <div class="flex items-center gap-2 sm:gap-2.5">
       <div class="hidden lg:flex items-center gap-2.5">
-        <Button href={`${import.meta.env.BASE_URL}/preguntas-frecuentes`} variant="ghost">Ayuda</Button>
-        <Button href={`${import.meta.env.BASE_URL}/simulador`} variant="primary">Solicitar préstamo</Button>
+        <Button href="https://wa.me/573113547995" variant="primary">Solicitar préstamo</Button>
       </div>
 
       <a
-        href={`${import.meta.env.BASE_URL}/simulador`}
+        href="https://wa.me/573113547995"
         class="lg:hidden inline-flex items-center gap-1.5 bg-primary text-white font-semibold text-[13px] sm:text-sm px-3 sm:px-4 py-2.5 rounded-[10px] hover:bg-primary-dark transition-colors whitespace-nowrap"
       >
         Solicitar
